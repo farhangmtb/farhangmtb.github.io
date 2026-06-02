@@ -101,6 +101,11 @@ section{padding:90px 0;position:relative;z-index:2}
 .proj-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:4px 10px;background:var(--bg-2);border:1px solid var(--line);border-radius:5px;color:var(--muted)}
 .view-btn{width:100%;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--bg-2);color:var(--text);cursor:pointer;transition:.2s}
 .view-btn:hover{border-color:var(--accent);color:var(--accent)}
+.proj-status-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;align-items:center}
+.proj-status{font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 9px;border-radius:10px;font-weight:600}
+.proj-status.ongoing{background:rgba(61,220,151,.12);color:var(--accent);border:1px solid rgba(61,220,151,.3)}
+.proj-status.lead{background:rgba(249,168,38,.12);color:#f9a826;border:1px solid rgba(249,168,38,.3)}
+.proj-status.completed{background:rgba(91,157,255,.1);color:var(--accent-2);border:1px solid rgba(91,157,255,.25)}
 
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding:60px 20px 40px;overflow-y:auto}
@@ -277,142 +282,146 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
       <button class="filt-btn" data-filter="electrification">Electrification</button>
       <button class="filt-btn" data-filter="autonomy">Autonomy</button>
       <button class="filt-btn" data-filter="ml">ML &amp; Modeling</button>
+      <button class="filt-btn" data-filter="leadership">Leadership</button>
     </div>
     <div class="proj-grid">
 
-      <!-- P1: Mobile DCFC -->
-      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('dcfc')">
+      <!-- P1: DCFC Field Testing -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('fieldtest')">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0c2218 0%,#081828 100%)">
-          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="44" width="52" height="16" rx="3" stroke="#3ddc97" stroke-width="1.5"/>
-            <circle cx="22" cy="60" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="50" cy="60" r="6" stroke="#3ddc97" stroke-width="1.5"/>
-            <path d="M10 52h52" stroke="#1f3a2a" stroke-width="1"/>
-            <path d="M14 44l6-18h32l6 18" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M34 30V18M38 30V18" stroke="#5b9dff" stroke-width="2" stroke-linecap="round"/>
-            <path d="M30 18h12" stroke="#5b9dff" stroke-width="2"/>
-            <circle cx="36" cy="14" r="3" fill="#5b9dff"/>
-            <path d="M36 12v-4" stroke="#5b9dff" stroke-width="1.5"/>
-          </svg>
+          <svg viewBox="0 0 72 72" fill="none"><rect x="6" y="28" width="60" height="30" rx="4" stroke="#3ddc97" stroke-width="1.5"/><path d="M14 28v-6a6 6 0 0 1 12 0v6M36 28v-6a6 6 0 0 1 12 0v6" stroke="#5b9dff" stroke-width="1.5"/><path d="M18 44h8M46 44h8" stroke="#3ddc97" stroke-width="2" stroke-linecap="round"/><path d="M36 36l3-6 3 6h-6z" fill="#3ddc97"/><circle cx="14" cy="58" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="58" cy="58" r="6" stroke="#3ddc97" stroke-width="1.5"/><path d="M20 58h32" stroke="#1f3a2a" stroke-width="1"/></svg>
         </div>
         <div class="proj-body">
-          <span class="proj-cat-badge">Electrification</span>
-          <h3>Mobile DCFC Siting &amp; Optimization</h3>
-          <p>VRP-based mixed-integer program to optimally site mobile DC fast chargers along California corridors under Caltrans funding.</p>
-          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Gurobi</span><span class="proj-tag">MIP</span><span class="proj-tag">VRP</span></div>
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status completed">Completed</span></div>
+          <h3>Mobile DCFC Field Testing &amp; Evaluation</h3>
+          <p>Comprehensive field evaluation of EVESCO EVES-6060-NA and FreeWire Boost Charger 200 for Caltrans fleet — compatibility, performance, battery management.</p>
+          <div class="proj-tags"><span class="proj-tag">Field Testing</span><span class="proj-tag">EV Charging</span><span class="proj-tag">Caltrans</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
 
-      <!-- P2: Fleet Electrification -->
-      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('fleet')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#0e1a26 100%)">
-          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="32" width="56" height="26" rx="4" stroke="#3ddc97" stroke-width="1.5"/>
-            <path d="M18 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5"/>
-            <path d="M34 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5" stroke-dasharray="4 2"/>
-            <path d="M14 42h10M48 42h10" stroke="#3ddc97" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M32 44l4-8 4 8h-8z" fill="#3ddc97"/>
-            <circle cx="20" cy="20" r="3" fill="#5b9dff" opacity=".5"/>
-            <circle cx="52" cy="20" r="3" fill="#5b9dff" opacity=".3"/>
-          </svg>
+      <!-- P2: Task 4482 -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('task4482')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#1e1a0a 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="14" width="56" height="46" rx="4" stroke="#3ddc97" stroke-width="1.5"/><path d="M8 26h56" stroke="#1f2a37" stroke-width="1"/><rect x="14" y="34" width="10" height="20" rx="1" fill="#3ddc97" opacity=".35"/><rect x="31" y="40" width="10" height="14" rx="1" fill="#5b9dff" opacity=".4"/><rect x="48" y="36" width="10" height="18" rx="1" fill="#3ddc97" opacity=".55"/><path d="M14 32l10-8 18 10 16-14" stroke="#5b9dff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="32" r="2" fill="#5b9dff"/><circle cx="58" cy="20" r="2" fill="#5b9dff"/></svg>
         </div>
         <div class="proj-body">
-          <span class="proj-cat-badge">Electrification</span>
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status lead">Lead PI</span><span class="proj-status ongoing">Ongoing</span></div>
+          <h3>Task 4482 &mdash; Lifetime Cost-Benefit Analysis of Mobile DCFC</h3>
+          <p>Leading comprehensive lifetime economic analysis of mobile DC fast chargers across deployment scenarios, including hardware, battery degradation, and operational costs.</p>
+          <div class="proj-tags"><span class="proj-tag">Cost Modeling</span><span class="proj-tag">Python</span><span class="proj-tag">Monte Carlo</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P3: Task 4483 -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('task4483')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e14 0%,#0a1428 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><circle cx="20" cy="20" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="52" cy="20" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="52" r="6" stroke="#5b9dff" stroke-width="1.5"/><path d="M26 20h20M23 25l10 21M49 25l-10 21" stroke="#1f3a2a" stroke-width="1.5" stroke-dasharray="3 2"/><circle cx="20" cy="20" r="2.5" fill="#3ddc97"/><circle cx="52" cy="20" r="2.5" fill="#3ddc97"/><circle cx="36" cy="52" r="2.5" fill="#5b9dff"/><path d="M36 20v-8M36 12l-4 4h8l-4-4z" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status ongoing">Ongoing</span></div>
+          <h3>Task 4483 &mdash; Optimal Planning for EV Charger Deployment</h3>
+          <p>Optimization framework for strategically siting EV chargers across California using demand modeling, VRP formulation, and geospatial analysis.</p>
+          <div class="proj-tags"><span class="proj-tag">VRP</span><span class="proj-tag">Gurobi</span><span class="proj-tag">GeoPandas</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P4: Task 4480 -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('task4480')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0f1a0a 0%,#1a1f0a 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="20" width="24" height="36" rx="4" stroke="#3ddc97" stroke-width="1.5"/><rect x="40" y="20" width="24" height="36" rx="4" stroke="#5b9dff" stroke-width="1.5" stroke-dasharray="5 2"/><path d="M32 38h8" stroke="#f9a826" stroke-width="2" stroke-linecap="round"/><path d="M36 34v8" stroke="#f9a826" stroke-width="2" stroke-linecap="round"/><path d="M14 32h12M14 38h12M14 44h8" stroke="#3ddc97" stroke-width="1.2" opacity=".6" stroke-linecap="round"/><path d="M46 32h12M46 38h12M46 44h8" stroke="#5b9dff" stroke-width="1.2" opacity=".6" stroke-linecap="round"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status ongoing">Ongoing</span></div>
+          <h3>Task 4480 &mdash; EV Chargers vs. Public Infrastructure CBA</h3>
+          <p>Cost-benefit framework comparing dedicated on-site EV charger installation against reliance on public charging infrastructure for state fleet operations.</p>
+          <div class="proj-tags"><span class="proj-tag">Policy Analysis</span><span class="proj-tag">Cost-Benefit</span><span class="proj-tag">Python</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P5: Fleet Electrification -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('fleet')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#0e1a26 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="32" width="56" height="26" rx="4" stroke="#3ddc97" stroke-width="1.5"/><path d="M18 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5"/><path d="M34 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5" stroke-dasharray="4 2"/><path d="M14 42h10M48 42h10" stroke="#3ddc97" stroke-width="1.5" stroke-linecap="round"/><path d="M32 44l4-8 4 8h-8z" fill="#3ddc97"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span></div>
           <h3>EV Fleet Electrification Analysis</h3>
-          <p>Large-scale telematics-driven feasibility study assessing electrification potential across multi-depot California state-agency fleets.</p>
+          <p>Large-scale Geotab telematics analysis assessing vehicle-level electrification feasibility across multi-depot California state-agency fleets.</p>
           <div class="proj-tags"><span class="proj-tag">Geotab SDK</span><span class="proj-tag">FastSim</span><span class="proj-tag">Python</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
 
-      <!-- P3: Eco-Driving -->
-      <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('eco')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#180e28 100%)">
-          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 48 Q 22 24 36 36 Q 50 48 64 28" stroke="#3ddc97" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M8 52 H 64" stroke="#1f2a37" stroke-width="1" stroke-dasharray="4 3"/>
-            <circle cx="36" cy="36" r="5" fill="none" stroke="#5b9dff" stroke-width="1.5"/>
-            <circle cx="36" cy="36" r="2" fill="#5b9dff"/>
-            <path d="M36 12v8M54 18l-5.6 5.6M60 36h-8M54 54l-5.6-5.6M36 60v-8M18 54l5.6-5.6M12 36h8M18 18l5.6 5.6" stroke="#5b9dff" stroke-width="1.2" opacity=".4" stroke-linecap="round"/>
-          </svg>
+      <!-- P6: Vehicle Instrumentation -->
+      <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('instrument')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#1a0e28 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><rect x="10" y="22" width="52" height="30" rx="6" stroke="#3ddc97" stroke-width="1.5"/><rect x="18" y="14" width="36" height="8" rx="3" stroke="#5b9dff" stroke-width="1.2"/><circle cx="22" cy="37" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="37" r="5" stroke="#5b9dff" stroke-width="1.5"/><circle cx="50" cy="37" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="22" cy="37" r="2" fill="#3ddc97" opacity=".5"/><circle cx="36" cy="37" r="2" fill="#5b9dff" opacity=".5"/><circle cx="50" cy="37" r="2" fill="#3ddc97" opacity=".5"/><path d="M22 52v6M36 52v6M50 52v6" stroke="#1f2a37" stroke-width="1.5"/><path d="M16 58h40" stroke="#3ddc97" stroke-width="1" opacity=".3"/></svg>
         </div>
         <div class="proj-body">
-          <span class="proj-cat-badge">Autonomy</span>
+          <div class="proj-status-row"><span class="proj-cat-badge">Autonomy</span></div>
+          <h3>Full-Size Vehicle Instrumentation &amp; Sensor Setup</h3>
+          <p>Hardware installation, ROS2 integration, and calibration of LiDAR, cameras, IMU, GPS, and CAN bus systems on full-size research vehicles.</p>
+          <div class="proj-tags"><span class="proj-tag">ROS2</span><span class="proj-tag">LiDAR</span><span class="proj-tag">CAN Bus</span><span class="proj-tag">Sensor Fusion</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P7: Eco-Driving -->
+      <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('eco')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#180e28 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><path d="M8 48 Q 22 24 36 36 Q 50 48 64 28" stroke="#3ddc97" stroke-width="2.5" stroke-linecap="round"/><path d="M8 52 H 64" stroke="#1f2a37" stroke-width="1" stroke-dasharray="4 3"/><circle cx="36" cy="36" r="5" fill="none" stroke="#5b9dff" stroke-width="1.5"/><circle cx="36" cy="36" r="2" fill="#5b9dff"/><path d="M36 12v8M54 18l-5.6 5.6M60 36h-8" stroke="#5b9dff" stroke-width="1.2" opacity=".4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-status-row"><span class="proj-cat-badge">Autonomy</span></div>
           <h3>Eco-Driving Control for CAVs</h3>
-          <p>Energy-optimal longitudinal control for connected automated vehicles leveraging real-time V2I signal phase &amp; timing (SPaT) data. Published in IEEE TCST.</p>
+          <p>Energy-optimal longitudinal control for connected automated vehicles leveraging real-time V2I SPaT data. Published in IEEE TCST.</p>
           <div class="proj-tags"><span class="proj-tag">MPC</span><span class="proj-tag">MATLAB</span><span class="proj-tag">Optimal Control</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
 
-      <!-- P4: Lane Detection Snow -->
+      <!-- P8: Lane Detection Snow -->
       <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('snow')">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#141828 100%)">
-          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="4" y="52" width="64" height="12" rx="2" fill="#1a232f"/>
-            <path d="M18 52L26 22M54 52L46 22" stroke="#3ddc97" stroke-width="2" stroke-dasharray="6 4"/>
-            <path d="M22 52L30 34M50 52L42 34" stroke="#3ddc97" stroke-width="1.5" opacity=".4"/>
-            <circle cx="36" cy="20" r="6" fill="none" stroke="#5b9dff" stroke-width="1.5"/>
-            <path d="M36 8v6M36 26v6M24 20h6M42 20h6" stroke="#5b9dff" stroke-width="1.5" opacity=".5" stroke-linecap="round"/>
-            <path d="M28 12l4 4M44 12l-4 4" stroke="#5b9dff" stroke-width="1" opacity=".3"/>
-            <circle cx="36" cy="20" r="2" fill="#5b9dff"/>
-          </svg>
+          <svg viewBox="0 0 72 72" fill="none"><rect x="4" y="52" width="64" height="12" rx="2" fill="#1a232f"/><path d="M18 52L26 22M54 52L46 22" stroke="#3ddc97" stroke-width="2" stroke-dasharray="6 4"/><path d="M22 52L30 34M50 52L42 34" stroke="#3ddc97" stroke-width="1.5" opacity=".4"/><circle cx="36" cy="20" r="6" fill="none" stroke="#5b9dff" stroke-width="1.5"/><path d="M36 8v6M36 26v6M24 20h6M42 20h6" stroke="#5b9dff" stroke-width="1.5" opacity=".5" stroke-linecap="round"/><circle cx="36" cy="20" r="2" fill="#5b9dff"/></svg>
         </div>
         <div class="proj-body">
-          <span class="proj-cat-badge">Autonomy</span>
+          <div class="proj-status-row"><span class="proj-cat-badge">Autonomy</span></div>
           <h3>Lane Detection in Snow-Occluded Conditions</h3>
-          <p>Robust lane detection using tire-track imprints as proxies for invisible painted lane markings. Published in IEEE TIV.</p>
-          <div class="proj-tags"><span class="proj-tag">PyTorch</span><span class="proj-tag">Computer Vision</span><span class="proj-tag">ROS</span></div>
+          <p>Robust lane detection using tire-track imprints as proxies for invisible painted lane markings. Published ITS World Congress 2022.</p>
+          <div class="proj-tags"><span class="proj-tag">PyTorch</span><span class="proj-tag">U-Net</span><span class="proj-tag">ROS</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
 
-      <!-- P5: PINN -->
+      <!-- P9: PINN -->
       <div class="proj-card reveal" data-cat="ml" onclick="openModal('pinn')">
         <div class="proj-thumb" style="background:linear-gradient(135deg,#18102a 0%,#0e1a0e 100%)">
-          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="24" r="5" stroke="#5b9dff" stroke-width="1.5"/>
-            <circle cx="12" cy="48" r="5" stroke="#5b9dff" stroke-width="1.5"/>
-            <circle cx="36" cy="16" r="5" stroke="#3ddc97" stroke-width="1.5"/>
-            <circle cx="36" cy="36" r="5" stroke="#3ddc97" stroke-width="1.5"/>
-            <circle cx="36" cy="56" r="5" stroke="#3ddc97" stroke-width="1.5"/>
-            <circle cx="60" cy="36" r="5" stroke="#5b9dff" stroke-width="1.5"/>
-            <path d="M17 24L31 16M17 24L31 36M17 24L31 56M17 48L31 16M17 48L31 36M17 48L31 56M41 16L55 36M41 36L55 36M41 56L55 36" stroke="#1f2a37" stroke-width="1"/>
-            <path d="M17 24L31 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/>
-            <path d="M41 36L55 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/>
-            <text x="22" y="9" fill="#3ddc97" font-size="7" font-family="monospace" opacity=".8">F=ma</text>
-          </svg>
+          <svg viewBox="0 0 72 72" fill="none"><circle cx="12" cy="24" r="5" stroke="#5b9dff" stroke-width="1.5"/><circle cx="12" cy="48" r="5" stroke="#5b9dff" stroke-width="1.5"/><circle cx="36" cy="16" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="36" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="56" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="60" cy="36" r="5" stroke="#5b9dff" stroke-width="1.5"/><path d="M17 24L31 16M17 24L31 36M17 24L31 56M17 48L31 16M17 48L31 36M17 48L31 56M41 16L55 36M41 36L55 36M41 56L55 36" stroke="#1f2a37" stroke-width="1"/><path d="M17 24L31 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/><path d="M41 36L55 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/><text x="22" y="9" fill="#3ddc97" font-size="7" font-family="monospace" opacity=".8">F=ma</text></svg>
         </div>
         <div class="proj-body">
-          <span class="proj-cat-badge">ML &amp; Modeling</span>
+          <div class="proj-status-row"><span class="proj-cat-badge">ML &amp; Modeling</span></div>
           <h3>Physics-Informed EV Energy Prediction</h3>
-          <p>Neural network architecture embedding vehicle dynamics equations as hard constraints for physically consistent energy consumption prediction.</p>
+          <p>Neural network embedding vehicle dynamics equations as hard constraints for physically consistent, data-efficient energy consumption prediction.</p>
           <div class="proj-tags"><span class="proj-tag">PyTorch</span><span class="proj-tag">PINN</span><span class="proj-tag">Deep Learning</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
 
-      <!-- P6: Cost Modeling -->
-      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('cost')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#1e1a0a 100%)">
-          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="14" width="56" height="46" rx="4" stroke="#3ddc97" stroke-width="1.5"/>
-            <path d="M8 26h56" stroke="#1f2a37" stroke-width="1"/>
-            <rect x="14" y="34" width="10" height="20" rx="1" fill="#3ddc97" opacity=".35"/>
-            <rect x="31" y="40" width="10" height="14" rx="1" fill="#5b9dff" opacity=".4"/>
-            <rect x="48" y="36" width="10" height="18" rx="1" fill="#3ddc97" opacity=".55"/>
-            <path d="M14 32l10-8 18 10 16-14" stroke="#5b9dff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="14" cy="32" r="2" fill="#5b9dff"/>
-            <circle cx="24" cy="24" r="2" fill="#5b9dff"/>
-            <circle cx="42" cy="34" r="2" fill="#5b9dff"/>
-            <circle cx="58" cy="20" r="2" fill="#5b9dff"/>
-          </svg>
+      <!-- P10: Grant Writing -->
+      <div class="proj-card reveal" data-cat="leadership" onclick="openModal('grants')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#1a1028 0%,#101a28 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><rect x="14" y="10" width="44" height="52" rx="4" stroke="#5b9dff" stroke-width="1.5"/><path d="M22 24h28M22 32h28M22 40h20M22 48h14" stroke="#3ddc97" stroke-width="1.5" stroke-linecap="round" opacity=".7"/><circle cx="54" cy="54" r="10" fill="#0a0e14" stroke="#f9a826" stroke-width="1.5"/><path d="M54 50v5l3 3" stroke="#f9a826" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <div class="proj-body">
-          <span class="proj-cat-badge">Electrification</span>
-          <h3>DCFC Infrastructure Cost Modeling</h3>
-          <p>Techno-economic model for DC fast charger deployment costs covering hardware, grid upgrades, installation, and operational expenses.</p>
-          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">GeoPandas</span><span class="proj-tag">Cost Analysis</span></div>
+          <div class="proj-status-row"><span class="proj-cat-badge">Leadership</span><span class="proj-status ongoing">Active</span></div>
+          <h3>Research Grant Development</h3>
+          <p>Led and co-wrote funded research proposals for DOE, DOD, and California Dept. of Transportation — spanning EV infrastructure, autonomy, and energy efficiency.</p>
+          <div class="proj-tags"><span class="proj-tag">DOE</span><span class="proj-tag">DOD</span><span class="proj-tag">Caltrans</span><span class="proj-tag">Grant Writing</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
@@ -570,6 +579,15 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
       </a>
 
       <!-- ── PRESENTATIONS ── -->
+      <a class="pub-item" data-pubtype="presentation" href="https://sites.google.com/ucdavis.edu/7th-norcal-control-workshop/home/" target="_blank" rel="noopener">
+        <span class="pub-badge presentation">Presentation</span>
+        <div class="pub-info">
+          <div class="pub-authors">F Motallebiaraghi</div>
+          <div class="pub-title">Research Presentation: EV Fleet Electrification &amp; Mobile DCFC Optimization</div>
+          <div class="pub-venue">7th NorCal Control Workshop &mdash; UC Davis</div>
+        </div>
+        <span class="pub-year">2024</span>
+      </a>
       <a class="pub-item" data-pubtype="presentation" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
         <span class="pub-badge presentation">Presentation</span>
         <div class="pub-info">
@@ -702,7 +720,151 @@ document.querySelectorAll('[data-pubfilter]').forEach(btn=>{
 
 /* --- MODAL DATA --- */
 const modals={
+  fieldtest:{
+    cat:'Electrification &mdash; Completed Caltrans Project',
+    title:'Mobile DCFC Field Testing &amp; Evaluation',
+    tags:['EVESCO EVES-6060-NA','FreeWire Boost 200','Field Testing','EV Charging','Caltrans','Battery Management'],
+    overview:'Evaluated mobile and semi-permanent DC fast-charging (DCFC) solutions for the California Department of Transportation\'s growing EV fleet. The project addressed infrastructure gaps delaying charging station deployments and hindering fleet operations by developing a comprehensive evaluation framework to compare two candidate systems under real-world conditions.',
+    how:'Two chargers were procured, installed, and tested extensively across diverse operating conditions: the EVESCO EVES-6060-NA (fully mobile, battery-buffered) and the FreeWire Boost Charger 200 (semi-permanent, up to 200 kW). Testing covered vehicle compatibility across all seven Caltrans priority EVs, charging performance, infrastructure requirements, battery management, and degradation over time. Parameters measured included charging efficiency, power delivery, state-of-charge curves, and public DCFC protocol compatibility (CHAdeMO, CCS).',
+    tech:['EVESCO EVES-6060-NA','FreeWire Boost Charger 200','CHAdeMO / CCS Protocols','Battery Management Systems','Data Acquisition','Python (data analysis)','MATLAB'],
+    results:[
+      'EVESCO EVES-6060-NA: compatible with all 7 Caltrans priority EVs; charging efficiency 87–91%; power delivery 25–45 kW; only 35% public DCFC station compatibility',
+      'FreeWire Boost Charger 200: up to 200 kW delivery; battery degradation concerns identified under current operating parameters — setpoint adjustments recommended',
+      'Both systems enable partial/full operation without immediate reliance on high-capacity utility connections, alleviating infrastructure constraints',
+      'Actionable procurement, deployment, and long-term asset management recommendations delivered to Caltrans'
+    ],
+    conclusions:'EVESCO offers fully mobile operation with moderate power delivery — ideal for remote deployment without grid access. FreeWire provides higher throughput but requires more site preparation and permitting. Both fill a critical gap in Caltrans electrification strategy by decoupling fleet charging from permanent grid infrastructure.',
+    pubs:[{label:'Full Caltrans Research Report (contact for access)',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}]
+  },
+  task4482:{
+    cat:'Electrification &mdash; Ongoing Caltrans Task 4482 (Lead Investigator)',
+    title:'Lifetime Cost-Benefit Analysis of Mobile DC Fast Chargers',
+    tags:['Cost-Benefit Analysis','Lifetime Modeling','Battery Degradation','Python','Monte Carlo','Caltrans Task 4482'],
+    overview:'Leading a comprehensive lifetime cost-benefit analysis of mobile DC fast chargers for Caltrans fleet operations. The study quantifies total cost of ownership across hardware procurement, installation, operations, battery replacement cycles, and residual value — compared against benefits from fleet uptime, range assurance, and avoided infrastructure costs.',
+    how:'A multi-year techno-economic model is built in Python, parameterized from field test data (battery cycling, efficiency curves, degradation rates from the EVESCO and FreeWire evaluations). Costs are modeled stochastically with Monte Carlo sampling over uncertain inputs (energy prices, battery replacement timing, permit costs). Benefit streams include fleet productivity gains and avoided fixed-infrastructure capital expenditure. Sensitivity analysis identifies the parameters that most impact net present value.',
+    tech:['Python','Monte Carlo Simulation','Pandas / NumPy','Battery Degradation Modeling','Economic NPV / IRR Analysis','Field Test Data Integration'],
+    results:['Ongoing — preliminary results show 8–12 year payback horizon under baseline utility rate assumptions','Battery replacement cost identified as dominant lifetime cost driver for buffer-based systems like EVESCO','Scenario analysis quantifies break-even conditions under varying electricity prices and fleet utilization rates'],
+    conclusions:'Lifetime cost-benefit framing reframes mobile DCFC from a capital expense to an asset-management decision, enabling Caltrans to optimize procurement timing, replacement schedules, and deployment rotation for maximum fleet value.',
+    pubs:[{label:'Google Scholar — F. Motallebiaraghi',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}]
+  },
+  task4483:{
+    cat:'Electrification &mdash; Ongoing Caltrans Task 4483 (Support Investigator)',
+    title:'Optimal Planning for EV Charger Deployment',
+    tags:['Vehicle Routing Problem','Gurobi','MIP','Geospatial Optimization','GeoPandas','Caltrans Task 4483'],
+    overview:'Developing a spatial optimization framework to determine the best locations, types, and quantities of EV chargers to deploy across California state facilities and highway corridors. The goal is to maximize fleet electrification coverage and minimize total system cost under constrained budgets and grid capacity.',
+    how:'Charging demand is reconstructed from telematics data aggregated by depot, route, and time of day. A mixed-integer program (MIP) formulates charger siting as a location-allocation problem: binary decision variables encode whether a candidate site receives a charger, and the objective minimizes total cost subject to coverage, budget, and grid capacity constraints. Gurobi solves the model; GeoPandas handles spatial data and site characterization from GIS layers.',
+    tech:['Python','Gurobi','MIP / MILP','GeoPandas','Geotab SDK','GIS / Spatial Analysis','Pandas'],
+    results:['Ongoing — initial corridor analysis complete for I-5 and US-101 priority segments','Framework generalizes to mixed charger types (Level 2, DCFC, mobile) within a unified model','Geospatial outputs ready for Caltrans district planning review'],
+    conclusions:'Optimization-based planning provides quantifiable improvements over heuristic siting approaches, ensuring limited infrastructure budgets are deployed where they have the greatest fleet impact.',
+    pubs:[{label:'Fleet Size and Mix CVRPTW for Mobile Fast Chargers — arXiv 2025',url:'https://arxiv.org/abs/2512.02381'}]
+  },
+  task4480:{
+    cat:'Electrification &mdash; Ongoing Caltrans Task 4480 (Support Investigator)',
+    title:'Task 4480 &mdash; Cost-Benefit: EV Chargers vs. Public Infrastructure',
+    tags:['Policy Analysis','Cost-Benefit','Scenario Modeling','Python','Fleet Operations','Caltrans Task 4480'],
+    overview:'Developing a decision framework to help Caltrans evaluate when it is more cost-effective to install dedicated on-site EV chargers versus relying on public charging infrastructure for state fleet vehicles. The study considers operational flexibility, charging cost per mile, detour time costs, reliability, and long-term asset ownership.',
+    how:'Total cost of use (TCOU) is modeled for two strategies — dedicated and public — across a matrix of fleet types, utilization patterns, and geographic contexts. Public charging costs incorporate average session prices, charger availability probability (based on real network data), and driver time costs for detours. Dedicated charging costs include capital, installation, demand charges, and maintenance. Scenario analysis tests sensitivity to electricity rates, fleet growth, and public network expansion.',
+    tech:['Python','Pandas','GeoPandas','Scenario Modeling','Public Charging Network APIs','Economic Modeling'],
+    results:['Ongoing — preliminary results show dedicated charging is cost-favorable for high-utilization depot fleets (>60 miles/day average)','Public infrastructure adequate for occasional-use vehicles in urban areas with dense charging networks','Decision tool being developed for district-level Caltrans fleet managers'],
+    conclusions:'The answer is context-dependent: depot location, daily mileage, local public network density, and utility demand charge structure all materially shift the break-even point. A data-driven decision tool removes guesswork from fleet electrification planning.',
+    pubs:[{label:'Google Scholar — F. Motallebiaraghi',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}]
+  },
+  fleet:{
+    cat:'Electrification',
+    title:'EV Fleet Electrification Analysis',
+    tags:['Python','Geotab SDK','FastSim','Pandas','Telematics','Caltrans-funded'],
+    overview:'Conducted a large-scale, vehicle-level electrification feasibility study for California state-agency fleets using Geotab telematics data. The goal: determine precisely which vehicles at which depots can be replaced by battery EVs today, what charging infrastructure they require, and what total fleet-level energy demand results.',
+    how:'Millions of GPS and telematics records are pulled via the Geotab SDK, cleaned, and reconstructed into individual trip profiles (distance, speed, elevation, payload). FastSim (NREL\'s vehicle simulation tool) is applied trip-by-trip to each candidate EV model, computing energy consumed and checking whether the battery meets range demand. Results are aggregated by vehicle, then by depot, to produce electrification readiness scores and charging demand forecasts for each site.',
+    tech:['Python','Geotab SDK','FastSim (NREL)','Pandas','NumPy','Matplotlib','GeoPandas'],
+    results:['Characterized electrification potential across multiple state-agency depot sites','Identified which vehicle classes (sedans, SUVs, light trucks) are immediately electrifiable vs. range-constrained','Produced depot-level charging demand forecasts (kWh/day, peak kW) to inform infrastructure sizing','Flagged high-mileage outlier routes requiring range extension or scheduling changes'],
+    conclusions:'A telematics-first approach provides vehicle-level precision that fleet-level averages miss. Electrification rates vary dramatically between depots and vehicle classes — data-driven targeting enables faster, lower-risk fleet transitions than blanket replacement policies.',
+    pubs:[{label:'Mobility Energy Productivity Evaluation — SAE WCX 2022',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}]
+  },
+  instrument:{
+    cat:'Autonomy',
+    title:'Full-Size Vehicle Instrumentation &amp; Sensor Configuration',
+    tags:['ROS2','LiDAR','Camera','IMU','GPS','CAN Bus','Sensor Calibration','CARLA'],
+    overview:'Designed and implemented complete sensor suites on full-size research vehicles for autonomous driving data collection and algorithm validation. The instrumented platforms support simultaneous multi-modal data acquisition across perception, localization, and vehicle dynamics domains.',
+    how:'Hardware installation covers roof-mounted LiDAR units (primary 3D perception), forward and surround-view cameras, inertial measurement units (IMU) for attitude estimation, dual-frequency GNSS for precision localization, and OBD/CAN bus interfaces for vehicle state (speed, steering angle, brake torque). All sensors are synchronized via hardware timestamping and integrated into a ROS2 node graph for real-time data streaming. Extrinsic calibration between sensors is performed using checkerboard and target-based methods; intrinsic camera calibration uses standard OpenCV routines. Data is logged in ROS bag format for offline analysis and algorithm development.',
+    tech:['ROS2 / RViz','LiDAR (Velodyne / Ouster)','RGB + Depth Cameras','IMU','Dual-Frequency GNSS','CAN Bus / OBD-II','Python / C++','MATLAB','CARLA Simulation'],
+    results:['Fully instrumented research vehicles supporting concurrent LiDAR, camera, IMU, and GPS recording at highway speeds','Sub-centimeter extrinsic calibration accuracy between sensor frames validated against ground truth','Deployed on platforms used for eco-driving control experiments and adverse-weather perception research','Data pipelines feeding both real-time ROS2 stacks and offline CARLA simulation validation'],
+    conclusions:'A well-calibrated, time-synchronized sensor platform is the foundation for reproducible autonomous driving research. The instrumentation work directly enabled the eco-driving control and snow lane detection projects, providing ground-truth data at scale.',
+    pubs:[{label:'Evaluation of AV Sensing &amp; Compute on a Chassis Dynamometer — IEEE ITSC 2023',url:'https://ieeexplore.ieee.org/document/10421872'}]
+  },
+  eco:{
+    cat:'Autonomy',
+    title:'Eco-Driving Control for Connected &amp; Automated Vehicles',
+    tags:['MPC','MATLAB','Python','Optimal Control','SPaT','V2I','IEEE TCST'],
+    overview:'Designed an energy-optimal longitudinal control strategy for connected and automated vehicles (CAVs) that exploits real-time V2I signal phase and timing (SPaT) broadcasts to plan smooth, fuel-efficient speed trajectories through signalized intersections. Published in IEEE Transactions on Control Systems Technology.',
+    how:'The controller receives SPaT data from roadside units — the remaining green/red time for upcoming intersections. It formulates a receding-horizon Model Predictive Control (MPC) problem: the state is the vehicle\'s position and velocity, inputs are throttle and brake commands, and the objective minimizes energy consumption while satisfying arrival-time constraints imposed by the signal phases. The optimization is solved online using quadratic programming, enabling real-time execution. Validated on a chassis dynamometer with a real EV.',
+    tech:['Model Predictive Control (MPC)','MATLAB','Python','Quadratic Programming','SPaT / V2I Protocol','Chassis Dynamometer Testing'],
+    results:['Demonstrated energy savings vs. human-driven baseline across multiple intersection scenarios','Achieved smooth, jerk-minimized trajectories reducing passenger discomfort vs. reactive stop-and-go','Validated on real EV on chassis dynamometer (SAE WCX 2023)','Published in IEEE TCST with 23 citations'],
+    conclusions:'V2I connectivity enables substantial energy savings without any hardware changes to the vehicle powertrain. Published in IEEE TCST as a validated proof-of-concept for production CAV systems.',
+    pubs:[
+      {label:'Real-Time Implementation Comparison of Urban Eco-Driving Controls — IEEE TCST 2023',url:'https://ieeexplore.ieee.org/document/10315101'},
+      {label:'Autonomous Eco-Driving Evaluation on a Chassis Dynamometer — SAE WCX 2023',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'},
+      {label:'Eco-Driving with Traffic Light &amp; Lead Vehicle Constraints — IFAC 2021',url:'https://doi.org/10.1016/j.ifacol.2021.10.008'}
+    ]
+  },
+  snow:{
+    cat:'Autonomy',
+    title:'Lane Detection in Snow-Occluded Conditions',
+    tags:['PyTorch','U-Net','Computer Vision','ROS','LiDAR','Camera'],
+    overview:'Developed a robust lane detection system for autonomous vehicles operating in heavy snowfall, where painted lane markings are completely invisible beneath accumulated snow. The system exploits tire track imprints — the compacted snow trails left by preceding vehicles — as reliable drivable-region proxies.',
+    how:'A U-Net convolutional neural network is trained on paired datasets: dashcam images collected in winter conditions labeled with drivable regions derived from tire track imprints. At inference, the network segments the drivable region from a single forward-facing camera image in real time. A ROS integration node feeds the output directly to the vehicle\'s path planner, maintaining lane-keeping without reliance on any painted markings.',
+    tech:['PyTorch','U-Net','OpenCV','ROS','LiDAR','Forward Camera','Semantic Segmentation'],
+    results:['Reliable drivable-region detection where all SOTA lane detectors relying on painted markings fail','Validated on real-world snow-covered road data from field instrumented vehicles','9 citations (ITS World Congress 2022); 11 citations (2023 follow-up workshop paper)'],
+    conclusions:'Tire-track-based detection is a practical, single-camera solution to all-weather lane keeping with no infrastructure changes required. The approach generalizes to unpaved roads and other scenarios lacking painted markings.',
+    pubs:[
+      {label:'Tire Track Identification: U-Net for Drivable Region Detection — ITS World Congress 2022',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'},
+      {label:'Computer Vision Models for Drivable Region Detection in Snow — 2023',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}
+    ]
+  },
+  pinn:{
+    cat:'ML &amp; Modeling',
+    title:'Physics-Informed EV Energy Consumption Prediction',
+    tags:['PyTorch','PINN','Deep Learning','FastSim','NumPy','scikit-learn'],
+    overview:'Designed a physics-informed neural network (PINN) architecture for predicting battery electric vehicle energy consumption from drive-cycle inputs. By embedding longitudinal vehicle dynamics equations directly into the network\'s loss function, the model remains physically consistent even when trained on sparse real-world data.',
+    how:'A standard feedforward network takes drive-cycle features (speed, acceleration, grade, payload) as input and predicts energy consumption. A physics residual loss term is added: the network\'s outputs are checked against Newton\'s second law and the tractive effort equation, and any violation is penalized during training. This dual loss — data fidelity plus physics residual — forces the model to learn physically plausible representations rather than spurious statistical correlations.',
+    tech:['PyTorch','Physics-Informed Neural Networks (PINN)','NumPy','scikit-learn','FastSim (NREL)','Matplotlib'],
+    results:['Outperforms purely data-driven baselines in low-data regimes (50–200 training trips)','Predictions remain physically consistent: no negative energy on flat roads, correct scaling with grade and payload','Generalizes better across vehicle types than black-box models trained on a single vehicle'],
+    conclusions:'Physics-informed architectures are especially valuable in transportation where labeled data is expensive and physical plausibility is a hard requirement. The method reduces training data requirements by an order of magnitude vs. standard deep learning for equivalent accuracy.',
+    pubs:[
+      {label:'High-Fidelity Modeling of Vehicle Fuel Economy Using Deep Neural Networks — SAE 2021',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'},
+      {label:'Vehicle Velocity Prediction Using ANNs — SAE WCX 2020',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}
+    ]
+  },
+  grants:{
+    cat:'Leadership',
+    title:'Research Grant Development',
+    tags:['DOE','DOD','Caltrans','NREL Collaboration','Technical Writing','Budget Development'],
+    overview:'Led and contributed to the development of funded research proposals across federal and state funding agencies — DOE, DOD, and the California Department of Transportation. Proposals span EV infrastructure deployment, autonomous vehicle energy efficiency, and physics-informed control systems.',
+    how:'Each proposal involves: (1) identifying funding opportunity alignment with ongoing research threads; (2) leading technical approach development — problem statement, methodology, evaluation metrics, team qualifications; (3) collaborating with co-investigators at UC Davis (AHMCT, CORE Lab) and external partners; (4) preparing detailed budgets and project timelines; (5) revising based on program officer feedback and panel reviews.',
+    tech:['Technical Writing','Budget Planning','DOE / DOD Proposal Systems','Collaboration with NREL, Caltrans','IRB / Compliance Coordination'],
+    results:[
+      'Multiple Caltrans research tasks funded and active: Task 4480, 4482 (Lead PI), 4483',
+      'Contributed to proposals targeting DOE Vehicle Technologies Office (EV infrastructure, eco-driving)',
+      'Supported DOD-aligned proposals on autonomous vehicle perception in adverse conditions',
+      'Collaborated with NREL on FastSim integration and energy modeling grant components'
+    ],
+    conclusions:'Grant writing transforms research expertise into funded programs — the bridge between academic knowledge and real-world impact. Sustained funding from Caltrans and federal agencies reflects a track record of technically rigorous and policy-relevant research proposals.',
+    pubs:[{label:'Google Scholar — F. Motallebiaraghi (funded work)',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}]
+  },
   dcfc:{
+    cat:'Electrification',
+    title:'Mobile DCFC Siting &amp; Optimization',
+    tags:['Python','Gurobi','MIP','VRP','GeoPandas','Caltrans-funded'],
+    overview:'See Task 4483 — this project has been consolidated into the ongoing Caltrans optimization work.',
+    how:'',tech:[],results:[],conclusions:'',pubs:[]
+  },
+  cost:{
+    cat:'Electrification',
+    title:'DCFC Infrastructure Cost Modeling',
+    tags:['Python','GeoPandas','Cost Analysis'],
+    overview:'See Task 4482 — this work has been consolidated into the ongoing Caltrans lifetime cost-benefit analysis.',
+    how:'',tech:[],results:[],conclusions:'',pubs:[]
+  }
+};
     cat:'Electrification',
     title:'Mobile DCFC Siting &amp; Optimization',
     tags:['Python','Gurobi','MIP','VRP','GeoPandas','Caltrans-funded'],
