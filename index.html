@@ -132,11 +132,6 @@ section{padding:90px 0;position:relative;z-index:2}
 .modal-pub-link:hover{border-color:var(--accent-2);background:rgba(91,157,255,.12);transform:translateY(-1px)}
 
 /* PUBLICATIONS */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
-@media(max-width:600px){.stats{grid-template-columns:1fr}}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;text-align:center}
-.stat-n{font-weight:800;font-size:40px;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
-.stat-l{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-top:10px}
 .pub-item{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;transition:.2s;text-decoration:none;color:inherit}
 .pub-item:hover{border-color:var(--accent-2);transform:translateX(4px)}
 .pub-item.hidden{display:none}
@@ -434,11 +429,6 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 <section id="publications">
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-num">04.</span><h2 class="sec-title">Publications</h2></div>
-    <div class="stats reveal">
-      <div class="stat"><div class="stat-n">200+</div><div class="stat-l">citations</div></div>
-      <div class="stat"><div class="stat-n">17+</div><div class="stat-l">publications</div></div>
-      <div class="stat"><div class="stat-n">IEEE · SAE</div><div class="stat-l">TCST &middot; Access &middot; ITSC &middot; WCX</div></div>
-    </div>
     <div class="filter-bar reveal">
       <button class="filt-btn active" data-pubfilter="all">All</button>
       <button class="filt-btn" data-pubfilter="journal">Journal</button>
@@ -448,137 +438,26 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
     </div>
     <div class="reveal">
 
-      <!-- ── JOURNALS ── -->
       <a class="pub-item" data-pubtype="journal" href="https://ieeexplore.ieee.org/search/searchresult.html?newsearch=true&queryText=deep+bilinear+koopman+frenet+vehicle" target="_blank" rel="noopener">
         <span class="pub-badge journal">Journal</span>
         <div class="pub-info">
           <div class="pub-authors">M Abtahi, FM Araghi, N Mojahed, S Nazari</div>
           <div class="pub-title">Deep Bilinear Koopman Model for Real-Time Vehicle Control in Frenet Frame</div>
-          <div class="pub-venue">IEEE Access &mdash; 4 citations</div>
+          <div class="pub-venue">IEEE Access</div>
         </div>
         <span class="pub-year">2026</span>
       </a>
-      <a class="pub-item" data-pubtype="journal" href="https://ieeexplore.ieee.org/document/10315101" target="_blank" rel="noopener">
-        <span class="pub-badge journal">Journal</span>
+
+      <a class="pub-item" data-pubtype="preprint" href="https://arxiv.org/abs/2512.02381" target="_blank" rel="noopener">
+        <span class="pub-badge preprint">Preprint</span>
         <div class="pub-info">
-          <div class="pub-authors">AI Rabinowitz, CC Ang, YH Mahmoud, FM Araghi, RT Meyer, et al.</div>
-          <div class="pub-title">Real-Time Implementation Comparison of Urban Eco-Driving Controls</div>
-          <div class="pub-venue">IEEE Transactions on Control Systems Technology, 32(1), 143&ndash;157 &mdash; 23 citations</div>
+          <div class="pub-authors">FM Araghi, A Abdolmohammadi, N Mojahed, S Nazari</div>
+          <div class="pub-title">Fleet Size and Mix Capacitated Vehicle Routing Problem with Time Windows for Mobile Fast Chargers</div>
+          <div class="pub-venue">arXiv:2512.02381</div>
         </div>
-        <span class="pub-year">2023</span>
-      </a>
-      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.3390/en14185713" target="_blank" rel="noopener">
-        <span class="pub-badge journal">Journal</span>
-        <div class="pub-info">
-          <div class="pub-authors">A Rabinowitz, FM Araghi, T Gaikwad, ZD Asher, TH Bradley</div>
-          <div class="pub-title">Development and Evaluation of Velocity Predictive Optimal Energy Management Strategies in Intelligent and Connected Hybrid Electric Vehicles</div>
-          <div class="pub-venue">Energies, 14(18), 5713 &mdash; 39 citations</div>
-        </div>
-        <span class="pub-year">2021</span>
+        <span class="pub-year">2025</span>
       </a>
 
-      <!-- ── CONFERENCE PAPERS ── -->
-      <a class="pub-item" data-pubtype="conference" href="https://ieeexplore.ieee.org/document/10421872" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">NE Brown, F Motallebiaraghi, JF Rojas, S Ayantayo, R Meyer, ZD Asher, et al.</div>
-          <div class="pub-title">Evaluation of Autonomous Vehicle Sensing and Compute Load on a Chassis Dynamometer</div>
-          <div class="pub-venue">2023 IEEE 26th International Conference on Intelligent Transportation Systems &mdash; 11 citations</div>
-        </div>
-        <span class="pub-year">2023</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">FM Araghi, A Rabinowitz, CC Ang, S Sharma, P Kadav, RT Meyer, et al.</div>
-          <div class="pub-title">Identifying and Assessing Research Gaps for Energy Efficient Control of Electrified Autonomous Vehicle Eco-Driving</div>
-          <div class="pub-venue">ML &amp; Optimization Techniques for Automotive Cyber-Physical Systems &mdash; 10 citations</div>
-        </div>
-        <span class="pub-year">2023</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">F Motallebiaraghi, A Rabinowitz, J Fanas Rojas, P Kadav, DA Miller, et al.</div>
-          <div class="pub-title">Autonomous Eco-Driving Evaluation of an Electric Vehicle on a Chassis Dynamometer</div>
-          <div class="pub-venue">SAE WCX World Congress Experience 288442 &mdash; 6 citations</div>
-        </div>
-        <span class="pub-year">2023</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">AI Rabinowitz, F Motallebiaraghi, R Meyer, Z Asher, I Kolmanovsky, et al.</div>
-          <div class="pub-title">An Ultra-Light Heuristic Algorithm for Autonomous Optimal Eco-Driving</div>
-          <div class="pub-venue">SAE WCX World Congress Experience</div>
-        </div>
-        <span class="pub-year">2023</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">P Kadav, S Sharma, FM Araghi, ZD Asher</div>
-          <div class="pub-title">Development of Computer Vision Models for Drivable Region Detection in Snow Occluded Lane Lines</div>
-          <div class="pub-venue">ML &amp; Optimization Techniques for Automotive Cyber-Physical Systems &mdash; 11 citations</div>
-        </div>
-        <span class="pub-year">2023</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">P Kadav, N Goberville, F Motallebiaraghi, A Fong, ZD Asher</div>
-          <div class="pub-title">Tire Track Identification: Application of U-Net Deep Learning Model for Drivable Region Detection in Snow Occluded Conditions</div>
-          <div class="pub-venue">ITS World Congress &mdash; 9 citations</div>
-        </div>
-        <span class="pub-year">2022</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">F Motallebiaraghi, K Yao, A Rabinowitz, C Hoehne, V Garikapati, et al.</div>
-          <div class="pub-title">Mobility Energy Productivity Evaluation of Prediction-Based Vehicle Powertrain Control Combined with Optimal Traffic Management</div>
-          <div class="pub-venue">SAE WCX World Congress Experience &mdash; 17 citations</div>
-        </div>
-        <span class="pub-year">2022</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">N Goberville, MM Zoardar, J Rojas, N Brown, F Motallebiaraghi, et al.</div>
-          <div class="pub-title">Techno-Economic Analysis of Fixed-Route Autonomous and Electric Shuttles</div>
-          <div class="pub-venue">SAE WCX Digital Summit 288440 &mdash; 9 citations</div>
-        </div>
-        <span class="pub-year">2021</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">F Motallebiaraghi, A Rabinowitz, S Jathar, A Fong, Z Asher, T Bradley</div>
-          <div class="pub-title">High-Fidelity Modeling of Light-Duty Vehicle Emission and Fuel Economy Using Deep Neural Networks</div>
-          <div class="pub-venue">SAE WCX Digital Summit &mdash; 19 citations</div>
-        </div>
-        <span class="pub-year">2021</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://doi.org/10.1016/j.ifacol.2021.10.008" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">YH Mahmoud, NE Brown, F Motallebiaraghi, M Koelling, R Meyer, et al.</div>
-          <div class="pub-title">Autonomous Eco-Driving with Traffic Light and Lead Vehicle Constraints: An Application of Best Constrained Interpolation</div>
-          <div class="pub-venue">IFAC-PapersOnLine, 54(10), 45&ndash;50 &mdash; 24 citations</div>
-        </div>
-        <span class="pub-year">2021</span>
-      </a>
-      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Conference</span>
-        <div class="pub-info">
-          <div class="pub-authors">AF Tushar Gaikwad, Aaron Rabinowitz, Farhang Motallebiaraghi, Thomas Bradley</div>
-          <div class="pub-title">Vehicle Velocity Prediction Using Artificial Neural Networks and Effect of Real-World Signals on Prediction Window</div>
-          <div class="pub-venue">SAE WCX World Congress Experience &mdash; 31 citations</div>
-        </div>
-        <span class="pub-year">2020</span>
-      </a>
-
-      <!-- ── PRESENTATIONS ── -->
       <a class="pub-item" data-pubtype="presentation" href="https://sites.google.com/ucdavis.edu/7th-norcal-control-workshop/home/" target="_blank" rel="noopener">
         <span class="pub-badge presentation">Presentation</span>
         <div class="pub-info">
@@ -588,15 +467,77 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         </div>
         <span class="pub-year">2024</span>
       </a>
+
+      <a class="pub-item" data-pubtype="journal" href="https://ieeexplore.ieee.org/document/10315101" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">AI Rabinowitz, CC Ang, YH Mahmoud, FM Araghi, RT Meyer, et al.</div>
+          <div class="pub-title">Real-Time Implementation Comparison of Urban Eco-Driving Controls</div>
+          <div class="pub-venue">IEEE Transactions on Control Systems Technology, 32(1), 143&ndash;157</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://ieeexplore.ieee.org/document/10421872" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">NE Brown, F Motallebiaraghi, JF Rojas, S Ayantayo, R Meyer, ZD Asher, et al.</div>
+          <div class="pub-title">Evaluation of Autonomous Vehicle Sensing and Compute Load on a Chassis Dynamometer</div>
+          <div class="pub-venue">IEEE Intelligent Transportation Systems Conference (ITSC)</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">FM Araghi, A Rabinowitz, CC Ang, S Sharma, P Kadav, RT Meyer, et al.</div>
+          <div class="pub-title">Identifying and Assessing Research Gaps for Energy Efficient Control of Electrified Autonomous Vehicle Eco-Driving</div>
+          <div class="pub-venue">ML &amp; Optimization Techniques for Automotive Cyber-Physical Systems</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">F Motallebiaraghi, A Rabinowitz, J Fanas Rojas, P Kadav, DA Miller, et al.</div>
+          <div class="pub-title">Autonomous Eco-Driving Evaluation of an Electric Vehicle on a Chassis Dynamometer</div>
+          <div class="pub-venue">SAE WCX World Congress Experience</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">AI Rabinowitz, F Motallebiaraghi, R Meyer, Z Asher, I Kolmanovsky, et al.</div>
+          <div class="pub-title">An Ultra-Light Heuristic Algorithm for Autonomous Optimal Eco-Driving</div>
+          <div class="pub-venue">SAE WCX World Congress Experience</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">P Kadav, S Sharma, FM Araghi, ZD Asher</div>
+          <div class="pub-title">Development of Computer Vision Models for Drivable Region Detection in Snow Occluded Lane Lines</div>
+          <div class="pub-venue">ML &amp; Optimization Techniques for Automotive Cyber-Physical Systems</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+
       <a class="pub-item" data-pubtype="presentation" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
         <span class="pub-badge presentation">Presentation</span>
         <div class="pub-info">
           <div class="pub-authors">P Kadav, NA Goberville, K Prins, A Siems-Anderson, C Walker, et al.</div>
           <div class="pub-title">Road Snow Coverage Estimation Using Camera and Weather Infrastructure Sensor Inputs</div>
-          <div class="pub-venue">SAE WCX World Congress Experience 288442 &mdash; 4 citations</div>
+          <div class="pub-venue">SAE WCX World Congress Experience</div>
         </div>
         <span class="pub-year">2023</span>
       </a>
+
       <a class="pub-item" data-pubtype="presentation" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
         <span class="pub-badge presentation">Presentation</span>
         <div class="pub-info">
@@ -607,15 +548,74 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <span class="pub-year">2023</span>
       </a>
 
-      <!-- ── PREPRINT ── -->
-      <a class="pub-item" data-pubtype="preprint" href="https://arxiv.org/abs/2512.02381" target="_blank" rel="noopener">
-        <span class="pub-badge preprint">Preprint</span>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
-          <div class="pub-authors">FM Araghi, A Abdolmohammadi, N Mojahed, S Nazari</div>
-          <div class="pub-title">Fleet Size and Mix Capacitated Vehicle Routing Problem with Time Windows for Mobile Fast Chargers</div>
-          <div class="pub-venue">arXiv:2512.02381</div>
+          <div class="pub-authors">P Kadav, N Goberville, F Motallebiaraghi, A Fong, ZD Asher</div>
+          <div class="pub-title">Tire Track Identification: Application of U-Net Deep Learning Model for Drivable Region Detection in Snow Occluded Conditions</div>
+          <div class="pub-venue">ITS World Congress</div>
         </div>
-        <span class="pub-year">2025</span>
+        <span class="pub-year">2022</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">F Motallebiaraghi, K Yao, A Rabinowitz, C Hoehne, V Garikapati, et al.</div>
+          <div class="pub-title">Mobility Energy Productivity Evaluation of Prediction-Based Vehicle Powertrain Control Combined with Optimal Traffic Management</div>
+          <div class="pub-venue">SAE WCX World Congress Experience</div>
+        </div>
+        <span class="pub-year">2022</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.3390/en14185713" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">A Rabinowitz, FM Araghi, T Gaikwad, ZD Asher, TH Bradley</div>
+          <div class="pub-title">Development and Evaluation of Velocity Predictive Optimal Energy Management Strategies in Intelligent and Connected Hybrid Electric Vehicles</div>
+          <div class="pub-venue">Energies, 14(18), 5713</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">N Goberville, MM Zoardar, J Rojas, N Brown, F Motallebiaraghi, et al.</div>
+          <div class="pub-title">Techno-Economic Analysis of Fixed-Route Autonomous and Electric Shuttles</div>
+          <div class="pub-venue">SAE WCX Digital Summit</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">F Motallebiaraghi, A Rabinowitz, S Jathar, A Fong, Z Asher, T Bradley</div>
+          <div class="pub-title">High-Fidelity Modeling of Light-Duty Vehicle Emission and Fuel Economy Using Deep Neural Networks</div>
+          <div class="pub-venue">SAE WCX Digital Summit</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://doi.org/10.1016/j.ifacol.2021.10.008" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">YH Mahmoud, NE Brown, F Motallebiaraghi, M Koelling, R Meyer, et al.</div>
+          <div class="pub-title">Autonomous Eco-Driving with Traffic Light and Lead Vehicle Constraints: An Application of Best Constrained Interpolation</div>
+          <div class="pub-venue">IFAC-PapersOnLine, 54(10), 45&ndash;50</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
+
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">AF Tushar Gaikwad, Aaron Rabinowitz, Farhang Motallebiaraghi, Thomas Bradley</div>
+          <div class="pub-title">Vehicle Velocity Prediction Using Artificial Neural Networks and Effect of Real-World Signals on Prediction Window</div>
+          <div class="pub-venue">SAE WCX World Congress Experience</div>
+        </div>
+        <span class="pub-year">2020</span>
       </a>
 
     </div>
