@@ -123,6 +123,8 @@ section{padding:90px 0;position:relative;z-index:2}
 .modal-sec ul li{margin-bottom:6px}
 .modal-chips{display:flex;flex-wrap:wrap;gap:8px}
 .modal-chip{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:7px 14px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;color:var(--text)}
+.modal-pub-link{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;color:var(--accent-2);padding:11px 20px;border:1px solid rgba(91,157,255,.3);border-radius:8px;background:rgba(91,157,255,.06);transition:.2s}
+.modal-pub-link:hover{border-color:var(--accent-2);background:rgba(91,157,255,.12);transform:translateY(-1px)}
 
 /* PUBLICATIONS */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
@@ -430,52 +432,125 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
       <button class="filt-btn active" data-pubfilter="all">All</button>
       <button class="filt-btn" data-pubfilter="journal">Journal</button>
       <button class="filt-btn" data-pubfilter="conference">Conference</button>
+      <button class="filt-btn" data-pubfilter="preprint">Preprint</button>
     </div>
     <div class="reveal">
-      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+      <a class="pub-item" data-pubtype="journal" href="https://ieeexplore.ieee.org/search/searchresult.html?newsearch=true&queryText=deep+bilinear+koopman+frenet+vehicle" target="_blank" rel="noopener">
         <span class="pub-badge journal">Journal</span>
         <div class="pub-info">
-          <div class="pub-authors">Motallebiaraghi F., et al.</div>
-          <div class="pub-title">Lane Detection in Snow-Occluded Conditions for Autonomous Vehicles</div>
-          <div class="pub-venue">IEEE Transactions on Intelligent Vehicles (TIV)</div>
+          <div class="pub-authors">M Abtahi, FM Araghi, N Mojahed, S Nazari</div>
+          <div class="pub-title">Deep Bilinear Koopman Model for Real-Time Vehicle Control in Frenet Frame</div>
+          <div class="pub-venue">IEEE Access &mdash; 4 citations</div>
+        </div>
+        <span class="pub-year">2026</span>
+      </a>
+      <a class="pub-item" data-pubtype="preprint" href="https://arxiv.org/abs/2512.02381" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Preprint</span>
+        <div class="pub-info">
+          <div class="pub-authors">FM Araghi, A Abdolmohammadi, N Mojahed, S Nazari</div>
+          <div class="pub-title">Fleet Size and Mix Capacitated Vehicle Routing Problem with Time Windows for Mobile Fast Chargers</div>
+          <div class="pub-venue">arXiv:2512.02381</div>
+        </div>
+        <span class="pub-year">2025</span>
+      </a>
+      <a class="pub-item" data-pubtype="journal" href="https://ieeexplore.ieee.org/document/10315101" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">AI Rabinowitz, CC Ang, YH Mahmoud, FM Araghi, RT Meyer, et al.</div>
+          <div class="pub-title">Real-Time Implementation Comparison of Urban Eco-Driving Controls</div>
+          <div class="pub-venue">IEEE Transactions on Control Systems Technology, 32(1), 143&ndash;157 &mdash; 23 citations</div>
         </div>
         <span class="pub-year">2023</span>
       </a>
-      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge journal">Journal</span>
+      <a class="pub-item" data-pubtype="conference" href="https://ieeexplore.ieee.org/document/10421872" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
-          <div class="pub-authors">Motallebiaraghi F., et al.</div>
-          <div class="pub-title">Eco-Driving Control Strategy for Connected and Automated Vehicles</div>
-          <div class="pub-venue">IEEE Transactions on Control Systems Technology (TCST)</div>
+          <div class="pub-authors">NE Brown, F Motallebiaraghi, JF Rojas, S Ayantayo, R Meyer, ZD Asher, et al.</div>
+          <div class="pub-title">Evaluation of Autonomous Vehicle Sensing and Compute Load on a Chassis Dynamometer</div>
+          <div class="pub-venue">2023 IEEE 26th International Conference on Intelligent Transportation Systems &mdash; 11 citations</div>
         </div>
-        <span class="pub-year">2022</span>
+        <span class="pub-year">2023</span>
       </a>
-      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge journal">Journal</span>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
-          <div class="pub-authors">Motallebiaraghi F., et al.</div>
-          <div class="pub-title">Fleet Electrification and Charging Infrastructure Optimization</div>
-          <div class="pub-venue">IEEE Transactions on Transportation Electrification (TTE)</div>
+          <div class="pub-authors">FM Araghi, A Rabinowitz, CC Ang, S Sharma, P Kadav, RT Meyer, et al.</div>
+          <div class="pub-title">Identifying and Assessing Research Gaps for Energy Efficient Control of Electrified Autonomous Vehicle Eco-Driving</div>
+          <div class="pub-venue">ML &amp; Optimization Techniques for Automotive Cyber-Physical Systems &mdash; 10 citations</div>
         </div>
-        <span class="pub-year">2022</span>
+        <span class="pub-year">2023</span>
       </a>
-      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
-        <span class="pub-badge journal">Journal</span>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
-          <div class="pub-authors">Motallebiaraghi F., et al.</div>
-          <div class="pub-title">Physics-Informed Neural Network for Electric Vehicle Energy Consumption Prediction</div>
-          <div class="pub-venue">SAE International Journal of Electrified Vehicles</div>
+          <div class="pub-authors">F Motallebiaraghi, A Rabinowitz, J Fanas Rojas, P Kadav, DA Miller, et al.</div>
+          <div class="pub-title">Autonomous Eco-Driving Evaluation of an Electric Vehicle on a Chassis Dynamometer</div>
+          <div class="pub-venue">SAE WCX World Congress Experience 288442 &mdash; 6 citations</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">P Kadav, S Sharma, FM Araghi, ZD Asher</div>
+          <div class="pub-title">Development of Computer Vision Models for Drivable Region Detection in Snow Occluded Lane Lines</div>
+          <div class="pub-venue">ML &amp; Optimization Techniques for Automotive Cyber-Physical Systems &mdash; 11 citations</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">P Kadav, N Goberville, F Motallebiaraghi, A Fong, ZD Asher</div>
+          <div class="pub-title">Tire Track Identification: Application of U-Net Deep Learning Model for Drivable Region Detection in Snow Occluded Conditions</div>
+          <div class="pub-venue">ITS World Congress 2022 &mdash; 9 citations</div>
         </div>
         <span class="pub-year">2022</span>
       </a>
       <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
         <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
-          <div class="pub-authors">Motallebiaraghi F., et al.</div>
-          <div class="pub-title">Autonomous Vehicle Sensor Systems and Energy Prediction</div>
-          <div class="pub-venue">SAE WCX World Congress Experience</div>
+          <div class="pub-authors">F Motallebiaraghi, K Yao, A Rabinowitz, C Hoehne, V Garikapati, et al.</div>
+          <div class="pub-title">Mobility Energy Productivity Evaluation of Prediction-Based Vehicle Powertrain Control Combined with Optimal Traffic Management</div>
+          <div class="pub-venue">SAE WCX World Congress Experience &mdash; 17 citations</div>
+        </div>
+        <span class="pub-year">2022</span>
+      </a>
+      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.3390/en14185713" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">A Rabinowitz, FM Araghi, T Gaikwad, ZD Asher, TH Bradley</div>
+          <div class="pub-title">Development and Evaluation of Velocity Predictive Optimal Energy Management Strategies in Intelligent and Connected Hybrid Electric Vehicles</div>
+          <div class="pub-venue">Energies, 14(18), 5713 &mdash; 39 citations</div>
         </div>
         <span class="pub-year">2021</span>
+      </a>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">F Motallebiaraghi, A Rabinowitz, S Jathar, A Fong, Z Asher, T Bradley</div>
+          <div class="pub-title">High-Fidelity Modeling of Light-Duty Vehicle Emission and Fuel Economy Using Deep Neural Networks</div>
+          <div class="pub-venue">SAE WCX Digital Summit &mdash; 19 citations</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
+      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.1016/j.ifacol.2021.10.008" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">YH Mahmoud, NE Brown, F Motallebiaraghi, M Koelling, R Meyer, et al.</div>
+          <div class="pub-title">Autonomous Eco-Driving with Traffic Light and Lead Vehicle Constraints: An Application of Best Constrained Interpolation</div>
+          <div class="pub-venue">IFAC-PapersOnLine, 54(10), 45&ndash;50 &mdash; 24 citations</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">AF Tushar Gaikwad, Aaron Rabinowitz, Farhang Motallebiaraghi, Thomas Bradley</div>
+          <div class="pub-title">Vehicle Velocity Prediction Using Artificial Neural Networks and Effect of Real-World Signals on Prediction Window</div>
+          <div class="pub-venue">SAE WCX World Congress Experience &mdash; 31 citations</div>
+        </div>
+        <span class="pub-year">2020</span>
       </a>
     </div>
   </div>
@@ -587,7 +662,8 @@ const modals={
     how:'Charging demand is first reconstructed from Geotab telematics — GPS traces, speed profiles, and state-of-charge estimates are aggregated by corridor segment and time window. The siting problem is then formulated as a mixed-integer linear program (MILP): decision variables encode which candidate sites receive chargers, and the objective minimizes weighted total deployment cost subject to demand-coverage constraints and fleet capacity limits. The model is solved with Gurobi, with warm-start heuristics to speed convergence on large instances.',
     tech:['Python','Gurobi','MIP / MILP','Vehicle Routing Problem','GeoPandas','Pandas','NumPy','Matplotlib'],
     results:['Identified cost-optimal charger configurations across multiple California corridor scenarios','Quantified tradeoffs between number of chargers deployed and percentage of demand covered','Produced geo-referenced site recommendations ready for Caltrans planning review','Demonstrated 20–35% cost reduction vs. fixed-site baseline under equivalent coverage targets'],
-    conclusions:'Mobile DCFC offers a fundamentally different deployment model — lower capital commitment, repositionable as demand evolves, and accessible in corridors where grid interconnection costs for fixed chargers are prohibitive. The optimization framework generalizes to any fleet-demand dataset and corridor topology.'
+    conclusions:'Mobile DCFC offers a fundamentally different deployment model — lower capital commitment, repositionable as demand evolves, and accessible in corridors where grid interconnection costs for fixed chargers are prohibitive. The optimization framework generalizes to any fleet-demand dataset and corridor topology.',
+    pubs:[{label:'Fleet Size and Mix CVRPTW for Mobile Fast Chargers — arXiv 2025',url:'https://arxiv.org/abs/2512.02381'}]
   },
   fleet:{
     cat:'Electrification',
@@ -597,7 +673,8 @@ const modals={
     how:'Millions of GPS and telematics records are pulled via the Geotab SDK, cleaned, and reconstructed into individual trip profiles (distance, speed, elevation, payload). FastSim (NREL\'s vehicle simulation tool) is applied trip-by-trip to each candidate EV model, computing energy consumed and checking whether the battery meets range demand. Results are aggregated by vehicle, then by depot, to produce electrification readiness scores and charging demand forecasts for each site.',
     tech:['Python','Geotab SDK','FastSim (NREL)','Pandas','NumPy','Matplotlib','GeoPandas'],
     results:['Characterized electrification potential across multiple state-agency depot sites','Identified which vehicle classes (sedans, SUVs, light trucks) are immediately electrifiable vs. range-constrained','Produced depot-level charging demand forecasts (kWh/day, peak kW) to inform infrastructure sizing','Flagged high-mileage outlier routes requiring range extension or scheduling changes'],
-    conclusions:'A telematics-first approach provides vehicle-level precision that fleet-level averages miss. Electrification rates vary dramatically between depots and vehicle classes — data-driven targeting enables faster, lower-risk fleet transitions than blanket replacement policies.'
+    conclusions:'A telematics-first approach provides vehicle-level precision that fleet-level averages miss. Electrification rates vary dramatically between depots and vehicle classes — data-driven targeting enables faster, lower-risk fleet transitions than blanket replacement policies.',
+    pubs:[{label:'Mobility Energy Productivity Evaluation — SAE WCX 2022',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}]
   },
   eco:{
     cat:'Autonomy',
@@ -607,37 +684,51 @@ const modals={
     how:'The controller receives SPaT data from roadside units — the remaining green/red time for upcoming intersections. It formulates a receding-horizon Model Predictive Control (MPC) problem: the state is the vehicle\'s position and velocity, inputs are throttle and brake commands, and the objective minimizes energy consumption while satisfying arrival-time constraints imposed by the signal phases. The optimization is solved online using quadratic programming, enabling real-time execution.',
     tech:['Model Predictive Control (MPC)','MATLAB','Python','Quadratic Programming','SPaT / V2I Protocol','Vehicle Dynamics Simulation'],
     results:['Demonstrated 12–18% fuel savings in simulation vs. human-driven baseline across multiple intersection scenarios','Achieved smooth, jerk-minimized trajectories that reduce passenger discomfort vs. reactive stop-and-go','Maintained intersection throughput while optimizing individual vehicle energy'],
-    conclusions:'V2I connectivity enables substantial energy savings without any hardware changes to the vehicle powertrain — the value is entirely in information. Published in IEEE TCST as a validated proof-of-concept for production CAV systems.'
+    conclusions:'V2I connectivity enables substantial energy savings without any hardware changes to the vehicle powertrain — the value is entirely in information. Published in IEEE TCST as a validated proof-of-concept for production CAV systems.',
+    pubs:[
+      {label:'Real-Time Implementation Comparison of Urban Eco-Driving Controls — IEEE TCST 2023',url:'https://ieeexplore.ieee.org/document/10315101'},
+      {label:'Autonomous Eco-Driving Evaluation on a Chassis Dynamometer — SAE WCX 2023',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'},
+      {label:'Eco-Driving with Traffic Light &amp; Lead Vehicle Constraints — IFAC 2021',url:'https://doi.org/10.1016/j.ifacol.2021.10.008'}
+    ]
   },
   snow:{
     cat:'Autonomy',
     title:'Lane Detection in Snow-Occluded Conditions',
-    tags:['PyTorch','Computer Vision','ROS','LiDAR','Camera','IEEE TIV'],
-    overview:'Developed a robust lane detection system for autonomous vehicles operating in heavy snowfall, where painted lane markings are completely invisible beneath accumulated snow. The system exploits tire track imprints — the compacted snow trails left by preceding vehicles — as reliable drivable-region proxies. Published in IEEE Transactions on Intelligent Vehicles.',
-    how:'A convolutional neural network is trained on paired datasets: dashcam images collected in winter conditions labeled with drivable regions derived from tire track imprints (identified from complementary overhead or LiDAR data during data collection). At inference, the network segments the drivable region from a single forward-facing camera image. A ROS integration node feeds the output directly to the vehicle\'s path planner, maintaining lane-keeping without reliance on any painted markings.',
-    tech:['PyTorch','OpenCV','ROS','LiDAR','Forward Camera','Semantic Segmentation','CARLA Simulation'],
-    results:['Reliable drivable-region detection in conditions where all SOTA lane detectors that rely on painted markings fail','Demonstrated in both simulated (CARLA) and real-world snow-covered road environments','Robust to varying snow depths and track-imprint clarity across time since last vehicle passage'],
-    conclusions:'Tire-track-based detection is a practical, single-camera solution to all-weather lane keeping that requires no infrastructure changes. The approach generalizes to any scenario where track imprints are present — unpaved roads, gravel, etc. Published in IEEE TIV.'
+    tags:['PyTorch','Computer Vision','ROS','LiDAR','Camera','U-Net'],
+    overview:'Developed a robust lane detection system for autonomous vehicles operating in heavy snowfall, where painted lane markings are completely invisible beneath accumulated snow. The system exploits tire track imprints — the compacted snow trails left by preceding vehicles — as reliable drivable-region proxies.',
+    how:'A U-Net convolutional neural network is trained on paired datasets: dashcam images collected in winter conditions labeled with drivable regions derived from tire track imprints. At inference, the network segments the drivable region from a single forward-facing camera image in real time. A ROS integration node feeds the output directly to the vehicle\'s path planner, maintaining lane-keeping without reliance on any painted markings.',
+    tech:['PyTorch','U-Net','OpenCV','ROS','LiDAR','Forward Camera','Semantic Segmentation'],
+    results:['Reliable drivable-region detection in conditions where all SOTA lane detectors that rely on painted markings fail','Demonstrated on real-world snow-covered road data collected during winter field tests','Robust to varying snow depths and track-imprint clarity across time since last vehicle passage','9 citations (ITS World Congress 2022), 11 citations (2023 follow-up)'],
+    conclusions:'Tire-track-based detection is a practical, single-camera solution to all-weather lane keeping that requires no infrastructure changes. The approach generalizes to any scenario where track imprints are present — unpaved roads, gravel, etc.',
+    pubs:[
+      {label:'Tire Track Identification: U-Net for Drivable Region Detection — ITS World Congress 2022',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'},
+      {label:'Computer Vision Models for Drivable Region Detection in Snow — 2023',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}
+    ]
   },
   pinn:{
     cat:'ML &amp; Modeling',
     title:'Physics-Informed EV Energy Consumption Prediction',
     tags:['PyTorch','PINN','Deep Learning','FastSim','NumPy','scikit-learn'],
-    overview:'Designed a physics-informed neural network (PINN) architecture for predicting battery electric vehicle energy consumption from drive-cycle inputs. By embedding longitudinal vehicle dynamics equations directly into the network\'s loss function as hard constraints, the model remains physically consistent even when trained on sparse real-world data.',
-    how:'A standard feedforward network takes drive-cycle features (speed, acceleration, grade, payload) as input and predicts energy consumption. To this conventional architecture, a physics residual loss term is added: the network\'s intermediate velocity and force outputs are checked against Newton\'s second law and the tractive effort equation, and any violation is penalized during training. This dual loss — data fidelity plus physics residual — forces the model to learn physically plausible internal representations rather than spurious statistical correlations.',
-    tech:['PyTorch','Physics-Informed Neural Networks (PINN)','NumPy','scikit-learn','FastSim (ground truth)','Matplotlib'],
-    results:['Outperforms purely data-driven baselines in low-data regimes (50–200 training trips)','Predictions remain physically consistent: no negative energy predicted on flat roads, correct scaling with grade and payload','Generalizes better across vehicle types than black-box models trained on a single vehicle'],
-    conclusions:'Physics-informed architectures are especially valuable in transportation where labeled data is expensive and physical plausibility is a hard requirement. The method reduces the training data needed by an order of magnitude compared to standard deep learning approaches for equivalent accuracy.'
+    overview:'Designed a physics-informed neural network (PINN) architecture for predicting battery electric vehicle energy consumption from drive-cycle inputs. By embedding longitudinal vehicle dynamics equations directly into the network\'s loss function, the model remains physically consistent even when trained on sparse real-world data.',
+    how:'A standard feedforward network takes drive-cycle features (speed, acceleration, grade, payload) as input and predicts energy consumption. A physics residual loss term is added: the network\'s outputs are checked against Newton\'s second law and the tractive effort equation, and any violation is penalized during training. This dual loss — data fidelity plus physics residual — forces the model to learn physically plausible internal representations rather than spurious statistical correlations.',
+    tech:['PyTorch','Physics-Informed Neural Networks (PINN)','NumPy','scikit-learn','FastSim (NREL)','Matplotlib'],
+    results:['Outperforms purely data-driven baselines in low-data regimes (50–200 training trips)','Predictions remain physically consistent: no negative energy on flat roads, correct scaling with grade and payload','Generalizes better across vehicle types than black-box models trained on a single vehicle'],
+    conclusions:'Physics-informed architectures are especially valuable in transportation where labeled data is expensive and physical plausibility is a hard requirement. The method reduces the training data needed by an order of magnitude vs. standard deep learning for equivalent accuracy.',
+    pubs:[
+      {label:'High-Fidelity Modeling of Vehicle Fuel Economy Using Deep Neural Networks — SAE 2021',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'},
+      {label:'Vehicle Velocity Prediction Using ANNs — SAE WCX 2020',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}
+    ]
   },
   cost:{
     cat:'Electrification',
     title:'DCFC Infrastructure Cost Modeling',
-    tags:['Python','GeoPandas','Cost Analysis','Techno-economic','Caltrans-funded'],
+    tags:['Python','GeoPandas','Techno-economic','Monte Carlo','Caltrans-funded'],
     overview:'Built a comprehensive techno-economic model for DC fast charger deployment cost estimation, covering hardware procurement, electrical installation, utility grid upgrade, permitting, and ongoing operational expenses. The model integrates with the VRP siting framework to output total cost-of-ownership estimates for any proposed deployment scenario.',
-    how:'Each candidate site is characterized by its existing grid connection capacity (pulled from utility data), distance to the nearest transformer, and local permit cost indices. Hardware costs are parameterized by charger power level (50–350 kW) and quantity. Grid upgrade costs — the dominant cost driver at high-power sites — are modeled as a function of required capacity delta and distance to interconnection point. Monte Carlo sampling over uncertain parameters (utility fees, permit timelines) produces cost distributions rather than point estimates.',
-    tech:['Python','GeoPandas','Pandas','Matplotlib','Monte Carlo Simulation','Utility Grid Data APIs'],
+    how:'Each candidate site is characterized by its existing grid connection capacity, distance to the nearest transformer, and local permit cost indices. Hardware costs are parameterized by charger power level (50–350 kW) and quantity. Grid upgrade costs — the dominant cost driver at high-power sites — are modeled as a function of required capacity delta and distance to interconnection point. Monte Carlo sampling over uncertain parameters produces cost distributions rather than point estimates.',
+    tech:['Python','GeoPandas','Pandas','Matplotlib','Monte Carlo Simulation','Utility Grid Data'],
     results:['Grid upgrade costs account for 45–65% of total deployment cost at 150+ kW sites — the single largest cost lever','Co-locating chargers at existing commercial utility connections reduces total cost by up to 40% vs. greenfield sites','Produced cost comparison reports across 12+ corridor deployment scenarios for Caltrans planning'],
-    conclusions:'Accurate cost modeling shifts infrastructure planning from rough-order-of-magnitude guesses to scenario-specific business cases. The framework has directly informed Caltrans DCFC siting decisions by making cost tradeoffs quantitative and comparable across sites.'
+    conclusions:'Accurate cost modeling shifts infrastructure planning from rough-order-of-magnitude guesses to scenario-specific business cases. The framework has directly informed Caltrans DCFC siting decisions by making cost tradeoffs quantitative and comparable across sites.',
+    pubs:[{label:'Full publication list on Google Scholar',url:'https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en'}]
   }
 };
 
@@ -652,7 +743,8 @@ function openModal(id){
     <div class="modal-sec"><h4>How It Works</h4><p>${d.how}</p></div>
     <div class="modal-sec"><h4>Tech Stack</h4><div class="modal-chips">${d.tech.map(t=>`<span class="modal-chip">${t}</span>`).join('')}</div></div>
     <div class="modal-sec"><h4>Results</h4><ul>${d.results.map(r=>`<li>${r}</li>`).join('')}</ul></div>
-    <div class="modal-sec"><h4>Conclusions</h4><p>${d.conclusions}</p></div>`;
+    <div class="modal-sec"><h4>Conclusions</h4><p>${d.conclusions}</p></div>
+    ${d.pubs&&d.pubs.length?`<div class="modal-hr"></div><div class="modal-sec"><h4>Publications</h4>${d.pubs.map(p=>`<a class="modal-pub-link" href="${p.url}" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2H7v14h10v-7h2v8a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h8zm5 0l1 1-9 9-1-1 9-9zm0 0V7h-4V3h4z"/></svg>${p.label}</a>`).join('')}</div>`:''}`;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
