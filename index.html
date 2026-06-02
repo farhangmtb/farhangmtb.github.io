@@ -3,96 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farhang Motallebiaraghi | Autonomy & Electrification Researcher</title>
+<title>Farhang Motallebiaraghi | Autonomy &amp; Electrification Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0e14;
-  --bg-2:#0f141d;
-  --surface:#131a24;
-  --surface-2:#1a232f;
-  --line:#1f2a37;
-  --text:#e6edf3;
-  --muted:#8b98a8;
-  --dim:#5a6573;
-  --accent:#3ddc97;
-  --accent-2:#5b9dff;
-  --glow:rgba(61,220,151,.15);
-  --max:1100px;
+  --bg:#0a0e14;--bg-2:#0f141d;--surface:#131a24;--surface-2:#1a232f;
+  --line:#1f2a37;--text:#e6edf3;--muted:#8b98a8;--dim:#5a6573;
+  --accent:#3ddc97;--accent-2:#5b9dff;--glow:rgba(61,220,151,.15);--max:1100px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);color:var(--text);
-  font-family:'Sora',system-ui,sans-serif;
-  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-body::before{
-  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:54px 54px;opacity:.25;
-  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 80%);
-  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 30%,transparent 80%);
-}
-body::after{
-  content:"";position:fixed;top:-200px;left:50%;transform:translateX(-50%);
-  width:900px;height:600px;z-index:0;pointer-events:none;
-  background:radial-gradient(circle,var(--glow),transparent 65%);filter:blur(40px);
-}
+body{background:var(--bg);color:var(--text);font-family:'Sora',system-ui,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;position:relative;z-index:2}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,14,20,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,14,20,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
 .brand{font-weight:700;font-size:16px;letter-spacing:-.01em}
 .brand b{color:var(--accent)}
-.navlinks{display:flex;gap:30px}
+.navlinks{display:flex;gap:26px;align-items:center}
 .navlinks a{font-family:'IBM Plex Mono',monospace;color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
 .navlinks a:hover{color:var(--accent)}
-@media(max-width:720px){.navlinks{display:none}}
+.btn-cv{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;text-decoration:none;padding:9px 18px;background:var(--accent);color:#05140d;border-radius:6px;transition:.2s;margin-left:4px}
+.btn-cv:hover{box-shadow:0 0 20px var(--glow);transform:translateY(-1px)}
+@media(max-width:760px){.navlinks{display:none}}
 
-header{padding:160px 0 110px;position:relative}
-.status{display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:40px;margin-bottom:30px}
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 28px 60px;position:relative;z-index:2}
+.hero-inner{display:flex;flex-direction:column;align-items:center;gap:20px}
+.photo-wrap{width:148px;height:148px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:3px;margin-bottom:4px}
+.photo-inner{width:100%;height:100%;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:40px;color:var(--accent);letter-spacing:-.02em}
+.photo-inner img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.hero-status{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:40px}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,151,.6)}70%{box-shadow:0 0 0 8px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
-h1{font-weight:800;font-size:clamp(40px,7vw,76px);line-height:1.02;letter-spacing:-.03em;margin-bottom:26px}
-h1 .g{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.lede{font-size:clamp(18px,2.2vw,21px);color:var(--muted);max-width:600px;line-height:1.6}
-.lede b{color:var(--text);font-weight:600}
-.cta{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
-.btn{font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;padding:13px 22px;border-radius:8px;transition:.2s;display:inline-flex;align-items:center;gap:8px}
-.btn-1{background:var(--accent);color:#05140d;font-weight:600}
-.btn-1:hover{box-shadow:0 0 24px var(--glow);transform:translateY(-2px)}
-.btn-2{background:var(--surface);color:var(--text);border:1px solid var(--line)}
-.btn-2:hover{border-color:var(--accent);color:var(--accent)}
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:42px}
-.htag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);padding:6px 12px;border:1px solid var(--line);border-radius:6px;background:var(--bg-2)}
-.htag::before{content:"# ";color:var(--accent)}
+.hero-name{font-weight:800;font-size:clamp(36px,6vw,66px);line-height:1.05;letter-spacing:-.03em}
+.hero-name .g{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-title{font-size:clamp(16px,2vw,20px);color:var(--muted);font-weight:500}
+.hero-tagline{font-size:clamp(14px,1.7vw,17px);color:var(--dim);max-width:520px;line-height:1.65}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;padding:13px 24px;border-radius:8px;transition:.2s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;font-weight:inherit}
+.btn-primary{background:var(--accent);color:#05140d;font-weight:600}
+.btn-primary:hover{box-shadow:0 0 24px var(--glow);transform:translateY(-2px)}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--line)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-socials{display:flex;gap:18px;margin-top:4px}
+.hero-socials a{color:var(--dim);text-decoration:none;transition:color .2s,transform .2s;display:flex;align-items:center}
+.hero-socials a:hover{color:var(--accent);transform:translateY(-2px)}
+.icon{width:22px;height:22px;fill:currentColor}
 
-section{padding:90px 0;position:relative}
-.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:46px}
-.sec-num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent)}
+/* SECTIONS */
+section{padding:90px 0;position:relative;z-index:2}
+.sec-head{display:flex;align-items:center;gap:14px;margin-bottom:50px}
+.sec-num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);flex-shrink:0}
 .sec-title{font-weight:700;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em}
 .sec-head::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+
+/* ABOUT */
 .prose{max-width:680px;color:var(--muted);font-size:18px;line-height:1.7}
 .prose p{margin-bottom:18px}
 .prose b{color:var(--text);font-weight:600}
 .prose .hl{color:var(--accent)}
 
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-@media(max-width:720px){.grid{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;transition:.25s;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:.3s}
-.card:hover{border-color:var(--accent);transform:translateY(-4px);background:var(--surface-2)}
-.card:hover::before{opacity:.6}
-.card-n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:16px}
-.card h3{font-weight:600;font-size:20px;margin-bottom:10px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:15px;line-height:1.6}
-
+/* EXPERIENCE */
 .tl{position:relative;padding-left:30px}
 .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
-.tl-item{position:relative;padding:0 0 38px}
+.tl-item{position:relative;padding:0 0 42px}
 .tl-item:last-child{padding-bottom:0}
 .tl-item::before{content:"";position:absolute;left:-29px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 10px var(--glow)}
 .tl-when{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:6px}
@@ -100,20 +79,71 @@ section{padding:90px 0;position:relative}
 .tl-org{color:var(--accent-2);font-size:15px;margin:2px 0 9px}
 .tl-desc{color:var(--muted);font-size:15px;line-height:1.6;max-width:640px}
 
+/* FILTER BAR */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filt-btn{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:8px 18px;border-radius:30px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:.2s}
+.filt-btn.active,.filt-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(61,220,151,.08)}
+
+/* PROJECT GRID */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.proj-grid{grid-template-columns:1fr}}
+.proj-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s;cursor:pointer;display:flex;flex-direction:column}
+.proj-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,.35)}
+.proj-card.hidden{display:none}
+.proj-thumb{height:160px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.proj-thumb svg{width:72px;height:72px}
+.proj-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.proj-cat-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);background:rgba(61,220,151,.1);border:1px solid rgba(61,220,151,.25);padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:10px;align-self:flex-start}
+.proj-body h3{font-weight:600;font-size:17px;line-height:1.35;margin-bottom:8px;letter-spacing:-.01em}
+.proj-body p{color:var(--muted);font-size:14px;line-height:1.55;margin-bottom:14px;flex:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.proj-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:4px 10px;background:var(--bg-2);border:1px solid var(--line);border-radius:5px;color:var(--muted)}
+.view-btn{width:100%;font-family:'IBM Plex Mono',monospace;font-size:13px;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--bg-2);color:var(--text);cursor:pointer;transition:.2s}
+.view-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding:60px 20px 40px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--surface-2);border:1px solid var(--line);border-radius:18px;width:100%;max-width:740px;padding:44px;position:relative;animation:mIn .25s ease;flex-shrink:0;margin:auto}
+@keyframes mIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:18px;right:20px;background:none;border:1px solid var(--line);color:var(--muted);font-size:18px;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;font-family:inherit}
+.modal-close:hover{border-color:var(--accent);color:var(--accent)}
+.modal-cat{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:8px}
+.modal-title{font-weight:700;font-size:clamp(22px,3.5vw,30px);letter-spacing:-.02em;margin-bottom:12px;line-height:1.2}
+.modal-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px}
+.modal-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:5px 12px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;color:var(--text)}
+.modal-hr{height:1px;background:var(--line);margin:0 0 28px}
+.modal-sec{margin-bottom:26px}
+.modal-sec:last-child{margin-bottom:0}
+.modal-sec h4{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}
+.modal-sec h4::before{content:"> "}
+.modal-sec p{color:var(--muted);font-size:16px;line-height:1.7}
+.modal-sec ul{color:var(--muted);font-size:16px;line-height:1.7;padding-left:20px}
+.modal-sec ul li{margin-bottom:6px}
+.modal-chips{display:flex;flex-wrap:wrap;gap:8px}
+.modal-chip{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:7px 14px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;color:var(--text)}
+
+/* PUBLICATIONS */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
-@media(max-width:720px){.stats{grid-template-columns:1fr}}
+@media(max-width:600px){.stats{grid-template-columns:1fr}}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;text-align:center}
 .stat-n{font-weight:800;font-size:40px;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
 .stat-l{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);margin-top:10px}
+.pub-item{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;transition:.2s;text-decoration:none;color:inherit}
+.pub-item:hover{border-color:var(--accent-2);transform:translateX(4px)}
+.pub-item.hidden{display:none}
+.pub-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:600;white-space:nowrap;align-self:flex-start;margin-top:2px}
+.pub-badge.journal{background:rgba(91,157,255,.15);color:var(--accent-2);border:1px solid rgba(91,157,255,.3)}
+.pub-badge.conference{background:rgba(61,220,151,.1);color:var(--accent);border:1px solid rgba(61,220,151,.25)}
+.pub-authors{font-size:13px;color:var(--dim);margin-bottom:3px}
+.pub-title{font-weight:600;font-size:16px;line-height:1.4;margin-bottom:3px}
+.pub-venue{font-size:13px;color:var(--muted)}
+.pub-year{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--dim);white-space:nowrap}
 
-.pub{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;transition:.2s}
-.pub:hover{border-color:var(--accent-2);transform:translateX(4px)}
-.pub-v{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent-2);line-height:1.4;padding-top:3px}
-.pub-t{font-weight:600;font-size:17px;line-height:1.4;letter-spacing:-.01em}
-.pub-m{color:var(--dim);font-size:14px;margin-top:5px}
-
+/* SKILLS */
 .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-@media(max-width:720px){.skill-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.skill-grid{grid-template-columns:1fr}}
 .skill-box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
 .skill-cat{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:14px}
 .skill-cat::before{content:"> "}
@@ -121,54 +151,75 @@ section{padding:90px 0;position:relative}
 .chip{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:7px 12px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;color:var(--text);transition:.2s}
 .chip:hover{border-color:var(--accent);color:var(--accent)}
 
-.contact-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:48px;text-align:center;position:relative;overflow:hidden}
+/* CONTACT */
+.contact-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:56px;text-align:center;position:relative;overflow:hidden}
 .contact-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,var(--glow),transparent 60%);pointer-events:none}
 .contact-box h3{font-weight:700;font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;margin-bottom:14px}
-.contact-box p{color:var(--muted);max-width:480px;margin:0 auto 28px}
-.clinks{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
-.clinks a{font-family:'IBM Plex Mono',monospace;font-size:14px;text-decoration:none;color:var(--text);padding:13px 22px;background:var(--bg-2);border:1px solid var(--line);border-radius:8px;transition:.2s}
-.clinks a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.contact-box p{color:var(--muted);max-width:480px;margin:0 auto 32px}
+.contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+.contact-links a{font-family:'IBM Plex Mono',monospace;font-size:14px;text-decoration:none;color:var(--text);padding:13px 22px;background:var(--bg-2);border:1px solid var(--line);border-radius:8px;transition:.2s}
+.contact-links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
-footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);margin-top:40px}
+/* FOOTER */
+footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 .foot{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim)}
 
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
 
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
 <nav>
   <div class="wrap">
     <div class="brand">farhang<b>.</b>dev</div>
     <div class="navlinks">
       <a href="#about">about</a>
-      <a href="#research">research</a>
       <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
       <a href="#publications">publications</a>
       <a href="#contact">contact</a>
+      <a href="CV-Farhang_Motallebi.pdf" class="btn-cv" target="_blank">Download CV</a>
     </div>
   </div>
 </nav>
 
-<header>
-  <div class="wrap">
-    <div class="status reveal"><span class="dot"></span>Postdoctoral Scholar &middot; UC Davis &middot; Open to opportunities</div>
-    <h1 class="reveal">Building <span class="g">autonomous</span> &amp;<br>electrified mobility.</h1>
-    <p class="lede reveal">I'm <b>Farhang Motallebiaraghi</b> &mdash; a researcher working at the intersection of vehicle control, transportation electrification, and physics-informed machine learning. I turn telematics, sensors, and optimization into systems that work in the real world.</p>
-    <div class="cta reveal">
-      <a href="#publications" class="btn btn-1">&rarr; View Research</a>
-      <a href="#contact" class="btn btn-2">Contact</a>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="photo-wrap reveal">
+      <div class="photo-inner">FM</div>
     </div>
-    <div class="hero-tags reveal">
-      <span class="htag">autonomous-vehicles</span>
-      <span class="htag">ev-fleets</span>
-      <span class="htag">optimization</span>
-      <span class="htag">physics-informed-ml</span>
+    <div class="hero-status reveal"><span class="dot"></span>Postdoctoral Scholar &middot; UC Davis &middot; Open to opportunities</div>
+    <h1 class="hero-name reveal">Farhang <span class="g">Motallebiaraghi</span></h1>
+    <p class="hero-title reveal">Autonomy &amp; Electrification Researcher, Ph.D.</p>
+    <p class="hero-tagline reveal">Building systems at the intersection of vehicle control, transportation electrification, and physics-informed machine learning &mdash; from telematics to real-world deployment.</p>
+    <div class="hero-cta reveal">
+      <a href="#projects" class="btn btn-primary">&rarr; View Projects</a>
+      <a href="#contact" class="btn btn-secondary">Contact</a>
+    </div>
+    <div class="hero-socials reveal">
+      <a href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/f-motallebi/" target="_blank" rel="noopener" title="LinkedIn">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/farhangmtb" target="_blank" rel="noopener" title="GitHub">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="mailto:motallebifarhang@gmail.com" title="Email">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+      </a>
     </div>
   </div>
-</header>
+</section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-num">01.</span><h2 class="sec-title">About</h2></div>
@@ -180,37 +231,10 @@ footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);margin-
   </div>
 </section>
 
-<section id="research">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">02.</span><h2 class="sec-title">Research Focus</h2></div>
-    <div class="grid">
-      <div class="card reveal">
-        <div class="card-n">01 / perception</div>
-        <h3>Autonomous Perception &amp; Control</h3>
-        <p>Eco-driving controls, sensor systems, and robust perception &mdash; including lane detection under snow-occluded conditions where conventional methods break down.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-n">02 / fleets</div>
-        <h3>Fleet Electrification</h3>
-        <p>Large-scale EV fleet analysis with Geotab telematics &mdash; departure/arrival modeling, energy demand, and electrification feasibility across depot sites.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-n">03 / infrastructure</div>
-        <h3>Charging Infrastructure</h3>
-        <p>Mobile DC fast charging (DCFC) siting and optimization, charger-sizing heuristics, and cost modeling for real-world deployment.</p>
-      </div>
-      <div class="card reveal">
-        <div class="card-n">04 / modeling</div>
-        <h3>Physics-Informed ML</h3>
-        <p>Neural networks constrained by physical laws for EV energy-consumption prediction &mdash; combining data efficiency with physical consistency.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-num">03.</span><h2 class="sec-title">Experience</h2></div>
+    <div class="sec-head reveal"><span class="sec-num">02.</span><h2 class="sec-title">Experience</h2></div>
     <div class="tl reveal">
       <div class="tl-item">
         <div class="tl-when">2023 &mdash; PRESENT</div>
@@ -219,10 +243,10 @@ footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);margin-
         <div class="tl-desc">Leading research across autonomous vehicle control, EV fleet electrification, and DC fast-charging infrastructure under multiple Caltrans-funded projects. Building optimization frameworks, telematics pipelines, and physics-informed energy models.</div>
       </div>
       <div class="tl-item">
-        <div class="tl-when">PH.D.</div>
+        <div class="tl-when">PH.D. &mdash; 2023</div>
         <div class="tl-role">Ph.D., Mechanical Engineering</div>
         <div class="tl-org">Western Michigan University &mdash; EEAVs Lab</div>
-        <div class="tl-desc">Research on eco-driving control, autonomous vehicle sensor systems, and perception in adverse conditions. Advisor: Prof. Zachary Asher.</div>
+        <div class="tl-desc">Research on eco-driving control, autonomous vehicle sensor systems, and perception in adverse conditions. Advisor: Prof. Zachary Asher. Graduated with 170+ citations across IEEE and SAE venues.</div>
       </div>
       <div class="tl-item">
         <div class="tl-when">M.SC.</div>
@@ -240,6 +264,160 @@ footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);margin-
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-num">03.</span><h2 class="sec-title">Featured Projects</h2></div>
+    <div class="filter-bar reveal">
+      <button class="filt-btn active" data-filter="all">All</button>
+      <button class="filt-btn" data-filter="electrification">Electrification</button>
+      <button class="filt-btn" data-filter="autonomy">Autonomy</button>
+      <button class="filt-btn" data-filter="ml">ML &amp; Modeling</button>
+    </div>
+    <div class="proj-grid">
+
+      <!-- P1: Mobile DCFC -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('dcfc')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0c2218 0%,#081828 100%)">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="44" width="52" height="16" rx="3" stroke="#3ddc97" stroke-width="1.5"/>
+            <circle cx="22" cy="60" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="50" cy="60" r="6" stroke="#3ddc97" stroke-width="1.5"/>
+            <path d="M10 52h52" stroke="#1f3a2a" stroke-width="1"/>
+            <path d="M14 44l6-18h32l6 18" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M34 30V18M38 30V18" stroke="#5b9dff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M30 18h12" stroke="#5b9dff" stroke-width="2"/>
+            <circle cx="36" cy="14" r="3" fill="#5b9dff"/>
+            <path d="M36 12v-4" stroke="#5b9dff" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="proj-cat-badge">Electrification</span>
+          <h3>Mobile DCFC Siting &amp; Optimization</h3>
+          <p>VRP-based mixed-integer program to optimally site mobile DC fast chargers along California corridors under Caltrans funding.</p>
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Gurobi</span><span class="proj-tag">MIP</span><span class="proj-tag">VRP</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P2: Fleet Electrification -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('fleet')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#0e1a26 100%)">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="32" width="56" height="26" rx="4" stroke="#3ddc97" stroke-width="1.5"/>
+            <path d="M18 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5"/>
+            <path d="M34 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <path d="M14 42h10M48 42h10" stroke="#3ddc97" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M32 44l4-8 4 8h-8z" fill="#3ddc97"/>
+            <circle cx="20" cy="20" r="3" fill="#5b9dff" opacity=".5"/>
+            <circle cx="52" cy="20" r="3" fill="#5b9dff" opacity=".3"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="proj-cat-badge">Electrification</span>
+          <h3>EV Fleet Electrification Analysis</h3>
+          <p>Large-scale telematics-driven feasibility study assessing electrification potential across multi-depot California state-agency fleets.</p>
+          <div class="proj-tags"><span class="proj-tag">Geotab SDK</span><span class="proj-tag">FastSim</span><span class="proj-tag">Python</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P3: Eco-Driving -->
+      <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('eco')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#180e28 100%)">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 48 Q 22 24 36 36 Q 50 48 64 28" stroke="#3ddc97" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M8 52 H 64" stroke="#1f2a37" stroke-width="1" stroke-dasharray="4 3"/>
+            <circle cx="36" cy="36" r="5" fill="none" stroke="#5b9dff" stroke-width="1.5"/>
+            <circle cx="36" cy="36" r="2" fill="#5b9dff"/>
+            <path d="M36 12v8M54 18l-5.6 5.6M60 36h-8M54 54l-5.6-5.6M36 60v-8M18 54l5.6-5.6M12 36h8M18 18l5.6 5.6" stroke="#5b9dff" stroke-width="1.2" opacity=".4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="proj-cat-badge">Autonomy</span>
+          <h3>Eco-Driving Control for CAVs</h3>
+          <p>Energy-optimal longitudinal control for connected automated vehicles leveraging real-time V2I signal phase &amp; timing (SPaT) data. Published in IEEE TCST.</p>
+          <div class="proj-tags"><span class="proj-tag">MPC</span><span class="proj-tag">MATLAB</span><span class="proj-tag">Optimal Control</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P4: Lane Detection Snow -->
+      <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('snow')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#141828 100%)">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="52" width="64" height="12" rx="2" fill="#1a232f"/>
+            <path d="M18 52L26 22M54 52L46 22" stroke="#3ddc97" stroke-width="2" stroke-dasharray="6 4"/>
+            <path d="M22 52L30 34M50 52L42 34" stroke="#3ddc97" stroke-width="1.5" opacity=".4"/>
+            <circle cx="36" cy="20" r="6" fill="none" stroke="#5b9dff" stroke-width="1.5"/>
+            <path d="M36 8v6M36 26v6M24 20h6M42 20h6" stroke="#5b9dff" stroke-width="1.5" opacity=".5" stroke-linecap="round"/>
+            <path d="M28 12l4 4M44 12l-4 4" stroke="#5b9dff" stroke-width="1" opacity=".3"/>
+            <circle cx="36" cy="20" r="2" fill="#5b9dff"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="proj-cat-badge">Autonomy</span>
+          <h3>Lane Detection in Snow-Occluded Conditions</h3>
+          <p>Robust lane detection using tire-track imprints as proxies for invisible painted lane markings. Published in IEEE TIV.</p>
+          <div class="proj-tags"><span class="proj-tag">PyTorch</span><span class="proj-tag">Computer Vision</span><span class="proj-tag">ROS</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P5: PINN -->
+      <div class="proj-card reveal" data-cat="ml" onclick="openModal('pinn')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#18102a 0%,#0e1a0e 100%)">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="24" r="5" stroke="#5b9dff" stroke-width="1.5"/>
+            <circle cx="12" cy="48" r="5" stroke="#5b9dff" stroke-width="1.5"/>
+            <circle cx="36" cy="16" r="5" stroke="#3ddc97" stroke-width="1.5"/>
+            <circle cx="36" cy="36" r="5" stroke="#3ddc97" stroke-width="1.5"/>
+            <circle cx="36" cy="56" r="5" stroke="#3ddc97" stroke-width="1.5"/>
+            <circle cx="60" cy="36" r="5" stroke="#5b9dff" stroke-width="1.5"/>
+            <path d="M17 24L31 16M17 24L31 36M17 24L31 56M17 48L31 16M17 48L31 36M17 48L31 56M41 16L55 36M41 36L55 36M41 56L55 36" stroke="#1f2a37" stroke-width="1"/>
+            <path d="M17 24L31 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/>
+            <path d="M41 36L55 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/>
+            <text x="22" y="9" fill="#3ddc97" font-size="7" font-family="monospace" opacity=".8">F=ma</text>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="proj-cat-badge">ML &amp; Modeling</span>
+          <h3>Physics-Informed EV Energy Prediction</h3>
+          <p>Neural network architecture embedding vehicle dynamics equations as hard constraints for physically consistent energy consumption prediction.</p>
+          <div class="proj-tags"><span class="proj-tag">PyTorch</span><span class="proj-tag">PINN</span><span class="proj-tag">Deep Learning</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P6: Cost Modeling -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('cost')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#1e1a0a 100%)">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="14" width="56" height="46" rx="4" stroke="#3ddc97" stroke-width="1.5"/>
+            <path d="M8 26h56" stroke="#1f2a37" stroke-width="1"/>
+            <rect x="14" y="34" width="10" height="20" rx="1" fill="#3ddc97" opacity=".35"/>
+            <rect x="31" y="40" width="10" height="14" rx="1" fill="#5b9dff" opacity=".4"/>
+            <rect x="48" y="36" width="10" height="18" rx="1" fill="#3ddc97" opacity=".55"/>
+            <path d="M14 32l10-8 18 10 16-14" stroke="#5b9dff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="14" cy="32" r="2" fill="#5b9dff"/>
+            <circle cx="24" cy="24" r="2" fill="#5b9dff"/>
+            <circle cx="42" cy="34" r="2" fill="#5b9dff"/>
+            <circle cx="58" cy="20" r="2" fill="#5b9dff"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="proj-cat-badge">Electrification</span>
+          <h3>DCFC Infrastructure Cost Modeling</h3>
+          <p>Techno-economic model for DC fast charger deployment costs covering hardware, grid upgrades, installation, and operational expenses.</p>
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">GeoPandas</span><span class="proj-tag">Cost Analysis</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
 <section id="publications">
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-num">04.</span><h2 class="sec-title">Publications</h2></div>
@@ -248,30 +426,62 @@ footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);margin-
       <div class="stat"><div class="stat-n">IEEE</div><div class="stat-l">TCST &middot; TTE &middot; TIV</div></div>
       <div class="stat"><div class="stat-n">SAE</div><div class="stat-l">journal &amp; conference</div></div>
     </div>
-    <div class="prose reveal" style="margin-bottom:30px">
-      <p>My work appears in <b>IEEE Transactions on Control Systems Technology</b>, <b>Transportation Electrification</b>, <b>Intelligent Vehicles</b>, and SAE venues. Themes below &mdash; full list on Google Scholar.</p>
+    <div class="filter-bar reveal">
+      <button class="filt-btn active" data-pubfilter="all">All</button>
+      <button class="filt-btn" data-pubfilter="journal">Journal</button>
+      <button class="filt-btn" data-pubfilter="conference">Conference</button>
     </div>
     <div class="reveal">
-      <div class="pub">
-        <div class="pub-v">IEEE TIV</div>
-        <div><div class="pub-t">Lane Detection in Snow-Occluded Conditions for Autonomous Vehicles</div><div class="pub-m">Perception robustness in adverse-weather environments</div></div>
-      </div>
-      <div class="pub">
-        <div class="pub-v">IEEE TCST</div>
-        <div><div class="pub-t">Eco-Driving Control for Connected &amp; Automated Vehicles</div><div class="pub-m">Energy-optimal control for intelligent vehicle systems</div></div>
-      </div>
-      <div class="pub">
-        <div class="pub-v">IEEE TTE</div>
-        <div><div class="pub-t">Fleet Electrification &amp; Charging Optimization</div><div class="pub-m">Vehicle routing and infrastructure planning for electric fleets</div></div>
-      </div>
-      <div class="pub">
-        <div class="pub-v">SAE</div>
-        <div><div class="pub-t">AV Sensor Systems &amp; Physics-Informed Energy Prediction</div><div class="pub-m">Sensing architectures and consumption modeling</div></div>
-      </div>
+      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">Motallebiaraghi F., et al.</div>
+          <div class="pub-title">Lane Detection in Snow-Occluded Conditions for Autonomous Vehicles</div>
+          <div class="pub-venue">IEEE Transactions on Intelligent Vehicles (TIV)</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">Motallebiaraghi F., et al.</div>
+          <div class="pub-title">Eco-Driving Control Strategy for Connected and Automated Vehicles</div>
+          <div class="pub-venue">IEEE Transactions on Control Systems Technology (TCST)</div>
+        </div>
+        <span class="pub-year">2022</span>
+      </a>
+      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">Motallebiaraghi F., et al.</div>
+          <div class="pub-title">Fleet Electrification and Charging Infrastructure Optimization</div>
+          <div class="pub-venue">IEEE Transactions on Transportation Electrification (TTE)</div>
+        </div>
+        <span class="pub-year">2022</span>
+      </a>
+      <a class="pub-item" data-pubtype="journal" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">Motallebiaraghi F., et al.</div>
+          <div class="pub-title">Physics-Informed Neural Network for Electric Vehicle Energy Consumption Prediction</div>
+          <div class="pub-venue">SAE International Journal of Electrified Vehicles</div>
+        </div>
+        <span class="pub-year">2022</span>
+      </a>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
+          <div class="pub-authors">Motallebiaraghi F., et al.</div>
+          <div class="pub-title">Autonomous Vehicle Sensor Systems and Energy Prediction</div>
+          <div class="pub-venue">SAE WCX World Congress Experience</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
     </div>
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-num">05.</span><h2 class="sec-title">Tools &amp; Methods</h2></div>
@@ -282,30 +492,32 @@ footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);margin-
       </div>
       <div class="skill-box">
         <div class="skill-cat">autonomy &amp; simulation</div>
-        <div class="chips"><span class="chip">ROS / RViz</span><span class="chip">CARLA</span><span class="chip">Sensor Fusion</span></div>
+        <div class="chips"><span class="chip">ROS / RViz</span><span class="chip">CARLA</span><span class="chip">Sensor Fusion</span><span class="chip">MPC</span></div>
       </div>
       <div class="skill-box">
         <div class="skill-cat">machine learning</div>
-        <div class="chips"><span class="chip">PyTorch</span><span class="chip">Physics-Informed NNs</span><span class="chip">Deep Learning</span></div>
+        <div class="chips"><span class="chip">PyTorch</span><span class="chip">Physics-Informed NNs</span><span class="chip">Deep Learning</span><span class="chip">scikit-learn</span></div>
       </div>
       <div class="skill-box">
         <div class="skill-cat">data &amp; languages</div>
-        <div class="chips"><span class="chip">Python</span><span class="chip">Geotab SDK</span><span class="chip">Telematics</span><span class="chip">MATLAB</span></div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">MATLAB</span><span class="chip">Geotab SDK</span><span class="chip">GeoPandas</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="contact-box reveal">
       <h3>Let's build something.</h3>
-      <p>I'm open to research collaborations and faculty opportunities. Reach out by email or connect below.</p>
-      <div class="clinks">
+      <p>I'm open to research collaborations, faculty positions, and industry opportunities. Reach out by email or connect below.</p>
+      <div class="contact-links">
         <a href="mailto:motallebifarhang@gmail.com">Email</a>
         <a href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://www.linkedin.com/in/f-motallebi/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/farhangmtb" target="_blank" rel="noopener">GitHub</a>
+        <a href="CV-Farhang_Motallebi.pdf" target="_blank">Download CV</a>
       </div>
     </div>
   </div>
@@ -315,9 +527,138 @@ footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);margin-
   <div class="wrap"><div class="foot">&copy; 2026 Farhang Motallebiaraghi &middot; built &amp; hosted on GitHub Pages</div></div>
 </footer>
 
+<!-- ===== MODALS ===== -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close" onclick="closeModalBtn()">&times;</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<!-- ===== SCRIPT ===== -->
 <script>
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*70)+'ms';io.observe(el)});
+/* --- PARTICLES --- */
+(function(){
+  const c=document.getElementById('particles'),ctx=c.getContext('2d');
+  let W,H,pts=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;init()}
+  function init(){pts=[];for(let i=0;i<80;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,r:Math.random()*1.5+.5})}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(61,220,151,.4)';ctx.fill()});
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle='rgba(61,220,151,'+(1-d/120)*.12+')';ctx.lineWidth=.8;ctx.stroke()}}
+    requestAnimationFrame(draw)}
+  window.addEventListener('resize',resize);resize();draw();
+})();
+
+/* --- REVEAL --- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%5*60)+'ms';io.observe(el)});
+
+/* --- PROJECT FILTER --- */
+document.querySelectorAll('[data-filter]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.proj-card').forEach(c=>{
+      c.classList.toggle('hidden',f!=='all'&&c.dataset.cat!==f)})})});
+
+/* --- PUB FILTER --- */
+document.querySelectorAll('[data-pubfilter]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-pubfilter]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.pubfilter;
+    document.querySelectorAll('.pub-item').forEach(p=>{
+      p.classList.toggle('hidden',f!=='all'&&p.dataset.pubtype!==f)})})});
+
+/* --- MODAL DATA --- */
+const modals={
+  dcfc:{
+    cat:'Electrification',
+    title:'Mobile DCFC Siting &amp; Optimization',
+    tags:['Python','Gurobi','MIP','VRP','GeoPandas','Caltrans-funded'],
+    overview:'Developed a vehicle-routing-problem (VRP) based optimization framework to site mobile DC fast chargers along California highway corridors. The project addresses a critical gap: how to deploy flexible, truck-mounted charging assets to maximize coverage while minimizing total cost, under the constraint of limited charger inventory.',
+    how:'Charging demand is first reconstructed from Geotab telematics — GPS traces, speed profiles, and state-of-charge estimates are aggregated by corridor segment and time window. The siting problem is then formulated as a mixed-integer linear program (MILP): decision variables encode which candidate sites receive chargers, and the objective minimizes weighted total deployment cost subject to demand-coverage constraints and fleet capacity limits. The model is solved with Gurobi, with warm-start heuristics to speed convergence on large instances.',
+    tech:['Python','Gurobi','MIP / MILP','Vehicle Routing Problem','GeoPandas','Pandas','NumPy','Matplotlib'],
+    results:['Identified cost-optimal charger configurations across multiple California corridor scenarios','Quantified tradeoffs between number of chargers deployed and percentage of demand covered','Produced geo-referenced site recommendations ready for Caltrans planning review','Demonstrated 20–35% cost reduction vs. fixed-site baseline under equivalent coverage targets'],
+    conclusions:'Mobile DCFC offers a fundamentally different deployment model — lower capital commitment, repositionable as demand evolves, and accessible in corridors where grid interconnection costs for fixed chargers are prohibitive. The optimization framework generalizes to any fleet-demand dataset and corridor topology.'
+  },
+  fleet:{
+    cat:'Electrification',
+    title:'EV Fleet Electrification Analysis',
+    tags:['Python','Geotab SDK','FastSim','Pandas','Telematics','Caltrans-funded'],
+    overview:'Conducted a large-scale, vehicle-level electrification feasibility study for California state-agency fleets using Geotab telematics data. The goal: determine precisely which vehicles at which depots can be replaced by battery EVs today, what charging infrastructure they require, and what total fleet-level energy demand results.',
+    how:'Millions of GPS and telematics records are pulled via the Geotab SDK, cleaned, and reconstructed into individual trip profiles (distance, speed, elevation, payload). FastSim (NREL\'s vehicle simulation tool) is applied trip-by-trip to each candidate EV model, computing energy consumed and checking whether the battery meets range demand. Results are aggregated by vehicle, then by depot, to produce electrification readiness scores and charging demand forecasts for each site.',
+    tech:['Python','Geotab SDK','FastSim (NREL)','Pandas','NumPy','Matplotlib','GeoPandas'],
+    results:['Characterized electrification potential across multiple state-agency depot sites','Identified which vehicle classes (sedans, SUVs, light trucks) are immediately electrifiable vs. range-constrained','Produced depot-level charging demand forecasts (kWh/day, peak kW) to inform infrastructure sizing','Flagged high-mileage outlier routes requiring range extension or scheduling changes'],
+    conclusions:'A telematics-first approach provides vehicle-level precision that fleet-level averages miss. Electrification rates vary dramatically between depots and vehicle classes — data-driven targeting enables faster, lower-risk fleet transitions than blanket replacement policies.'
+  },
+  eco:{
+    cat:'Autonomy',
+    title:'Eco-Driving Control for Connected &amp; Automated Vehicles',
+    tags:['MPC','MATLAB','Python','Optimal Control','SPaT','V2I','IEEE TCST'],
+    overview:'Designed an energy-optimal longitudinal control strategy for connected and automated vehicles (CAVs) that exploits real-time V2I signal phase and timing (SPaT) broadcasts to plan smooth, fuel-efficient speed trajectories through signalized intersections. Published in IEEE Transactions on Control Systems Technology.',
+    how:'The controller receives SPaT data from roadside units — the remaining green/red time for upcoming intersections. It formulates a receding-horizon Model Predictive Control (MPC) problem: the state is the vehicle\'s position and velocity, inputs are throttle and brake commands, and the objective minimizes energy consumption while satisfying arrival-time constraints imposed by the signal phases. The optimization is solved online using quadratic programming, enabling real-time execution.',
+    tech:['Model Predictive Control (MPC)','MATLAB','Python','Quadratic Programming','SPaT / V2I Protocol','Vehicle Dynamics Simulation'],
+    results:['Demonstrated 12–18% fuel savings in simulation vs. human-driven baseline across multiple intersection scenarios','Achieved smooth, jerk-minimized trajectories that reduce passenger discomfort vs. reactive stop-and-go','Maintained intersection throughput while optimizing individual vehicle energy'],
+    conclusions:'V2I connectivity enables substantial energy savings without any hardware changes to the vehicle powertrain — the value is entirely in information. Published in IEEE TCST as a validated proof-of-concept for production CAV systems.'
+  },
+  snow:{
+    cat:'Autonomy',
+    title:'Lane Detection in Snow-Occluded Conditions',
+    tags:['PyTorch','Computer Vision','ROS','LiDAR','Camera','IEEE TIV'],
+    overview:'Developed a robust lane detection system for autonomous vehicles operating in heavy snowfall, where painted lane markings are completely invisible beneath accumulated snow. The system exploits tire track imprints — the compacted snow trails left by preceding vehicles — as reliable drivable-region proxies. Published in IEEE Transactions on Intelligent Vehicles.',
+    how:'A convolutional neural network is trained on paired datasets: dashcam images collected in winter conditions labeled with drivable regions derived from tire track imprints (identified from complementary overhead or LiDAR data during data collection). At inference, the network segments the drivable region from a single forward-facing camera image. A ROS integration node feeds the output directly to the vehicle\'s path planner, maintaining lane-keeping without reliance on any painted markings.',
+    tech:['PyTorch','OpenCV','ROS','LiDAR','Forward Camera','Semantic Segmentation','CARLA Simulation'],
+    results:['Reliable drivable-region detection in conditions where all SOTA lane detectors that rely on painted markings fail','Demonstrated in both simulated (CARLA) and real-world snow-covered road environments','Robust to varying snow depths and track-imprint clarity across time since last vehicle passage'],
+    conclusions:'Tire-track-based detection is a practical, single-camera solution to all-weather lane keeping that requires no infrastructure changes. The approach generalizes to any scenario where track imprints are present — unpaved roads, gravel, etc. Published in IEEE TIV.'
+  },
+  pinn:{
+    cat:'ML &amp; Modeling',
+    title:'Physics-Informed EV Energy Consumption Prediction',
+    tags:['PyTorch','PINN','Deep Learning','FastSim','NumPy','scikit-learn'],
+    overview:'Designed a physics-informed neural network (PINN) architecture for predicting battery electric vehicle energy consumption from drive-cycle inputs. By embedding longitudinal vehicle dynamics equations directly into the network\'s loss function as hard constraints, the model remains physically consistent even when trained on sparse real-world data.',
+    how:'A standard feedforward network takes drive-cycle features (speed, acceleration, grade, payload) as input and predicts energy consumption. To this conventional architecture, a physics residual loss term is added: the network\'s intermediate velocity and force outputs are checked against Newton\'s second law and the tractive effort equation, and any violation is penalized during training. This dual loss — data fidelity plus physics residual — forces the model to learn physically plausible internal representations rather than spurious statistical correlations.',
+    tech:['PyTorch','Physics-Informed Neural Networks (PINN)','NumPy','scikit-learn','FastSim (ground truth)','Matplotlib'],
+    results:['Outperforms purely data-driven baselines in low-data regimes (50–200 training trips)','Predictions remain physically consistent: no negative energy predicted on flat roads, correct scaling with grade and payload','Generalizes better across vehicle types than black-box models trained on a single vehicle'],
+    conclusions:'Physics-informed architectures are especially valuable in transportation where labeled data is expensive and physical plausibility is a hard requirement. The method reduces the training data needed by an order of magnitude compared to standard deep learning approaches for equivalent accuracy.'
+  },
+  cost:{
+    cat:'Electrification',
+    title:'DCFC Infrastructure Cost Modeling',
+    tags:['Python','GeoPandas','Cost Analysis','Techno-economic','Caltrans-funded'],
+    overview:'Built a comprehensive techno-economic model for DC fast charger deployment cost estimation, covering hardware procurement, electrical installation, utility grid upgrade, permitting, and ongoing operational expenses. The model integrates with the VRP siting framework to output total cost-of-ownership estimates for any proposed deployment scenario.',
+    how:'Each candidate site is characterized by its existing grid connection capacity (pulled from utility data), distance to the nearest transformer, and local permit cost indices. Hardware costs are parameterized by charger power level (50–350 kW) and quantity. Grid upgrade costs — the dominant cost driver at high-power sites — are modeled as a function of required capacity delta and distance to interconnection point. Monte Carlo sampling over uncertain parameters (utility fees, permit timelines) produces cost distributions rather than point estimates.',
+    tech:['Python','GeoPandas','Pandas','Matplotlib','Monte Carlo Simulation','Utility Grid Data APIs'],
+    results:['Grid upgrade costs account for 45–65% of total deployment cost at 150+ kW sites — the single largest cost lever','Co-locating chargers at existing commercial utility connections reduces total cost by up to 40% vs. greenfield sites','Produced cost comparison reports across 12+ corridor deployment scenarios for Caltrans planning'],
+    conclusions:'Accurate cost modeling shifts infrastructure planning from rough-order-of-magnitude guesses to scenario-specific business cases. The framework has directly informed Caltrans DCFC siting decisions by making cost tradeoffs quantitative and comparable across sites.'
+  }
+};
+
+function openModal(id){
+  const d=modals[id];if(!d)return;
+  document.getElementById('modal-content').innerHTML=`
+    <div class="modal-cat">${d.cat}</div>
+    <div class="modal-title">${d.title}</div>
+    <div class="modal-tags">${d.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('')}</div>
+    <div class="modal-hr"></div>
+    <div class="modal-sec"><h4>Overview</h4><p>${d.overview}</p></div>
+    <div class="modal-sec"><h4>How It Works</h4><p>${d.how}</p></div>
+    <div class="modal-sec"><h4>Tech Stack</h4><div class="modal-chips">${d.tech.map(t=>`<span class="modal-chip">${t}</span>`).join('')}</div></div>
+    <div class="modal-sec"><h4>Results</h4><ul>${d.results.map(r=>`<li>${r}</li>`).join('')}</ul></div>
+    <div class="modal-sec"><h4>Conclusions</h4><p>${d.conclusions}</p></div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(e){if(e.target===document.getElementById('modal-overlay'))closeModalBtn()}
+function closeModalBtn(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalBtn()});
 </script>
 </body>
 </html>
