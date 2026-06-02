@@ -138,6 +138,8 @@ section{padding:90px 0;position:relative;z-index:2}
 .pub-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:600;white-space:nowrap;align-self:flex-start;margin-top:2px}
 .pub-badge.journal{background:rgba(91,157,255,.15);color:var(--accent-2);border:1px solid rgba(91,157,255,.3)}
 .pub-badge.conference{background:rgba(61,220,151,.1);color:var(--accent);border:1px solid rgba(61,220,151,.25)}
+.pub-badge.presentation{background:rgba(249,168,38,.1);color:#f9a826;border:1px solid rgba(249,168,38,.3)}
+.pub-badge.preprint{background:rgba(200,100,255,.1);color:#c864ff;border:1px solid rgba(200,100,255,.3)}
 .pub-authors{font-size:13px;color:var(--dim);margin-bottom:3px}
 .pub-title{font-weight:600;font-size:16px;line-height:1.4;margin-bottom:3px}
 .pub-venue{font-size:13px;color:var(--muted)}
@@ -424,17 +426,20 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-num">04.</span><h2 class="sec-title">Publications</h2></div>
     <div class="stats reveal">
-      <div class="stat"><div class="stat-n">170+</div><div class="stat-l">citations</div></div>
-      <div class="stat"><div class="stat-n">IEEE</div><div class="stat-l">TCST &middot; TTE &middot; TIV</div></div>
-      <div class="stat"><div class="stat-n">SAE</div><div class="stat-l">journal &amp; conference</div></div>
+      <div class="stat"><div class="stat-n">200+</div><div class="stat-l">citations</div></div>
+      <div class="stat"><div class="stat-n">17+</div><div class="stat-l">publications</div></div>
+      <div class="stat"><div class="stat-n">IEEE · SAE</div><div class="stat-l">TCST &middot; Access &middot; ITSC &middot; WCX</div></div>
     </div>
     <div class="filter-bar reveal">
       <button class="filt-btn active" data-pubfilter="all">All</button>
       <button class="filt-btn" data-pubfilter="journal">Journal</button>
       <button class="filt-btn" data-pubfilter="conference">Conference</button>
+      <button class="filt-btn" data-pubfilter="presentation">Presentation</button>
       <button class="filt-btn" data-pubfilter="preprint">Preprint</button>
     </div>
     <div class="reveal">
+
+      <!-- ── JOURNALS ── -->
       <a class="pub-item" data-pubtype="journal" href="https://ieeexplore.ieee.org/search/searchresult.html?newsearch=true&queryText=deep+bilinear+koopman+frenet+vehicle" target="_blank" rel="noopener">
         <span class="pub-badge journal">Journal</span>
         <div class="pub-info">
@@ -443,15 +448,6 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
           <div class="pub-venue">IEEE Access &mdash; 4 citations</div>
         </div>
         <span class="pub-year">2026</span>
-      </a>
-      <a class="pub-item" data-pubtype="preprint" href="https://arxiv.org/abs/2512.02381" target="_blank" rel="noopener">
-        <span class="pub-badge conference">Preprint</span>
-        <div class="pub-info">
-          <div class="pub-authors">FM Araghi, A Abdolmohammadi, N Mojahed, S Nazari</div>
-          <div class="pub-title">Fleet Size and Mix Capacitated Vehicle Routing Problem with Time Windows for Mobile Fast Chargers</div>
-          <div class="pub-venue">arXiv:2512.02381</div>
-        </div>
-        <span class="pub-year">2025</span>
       </a>
       <a class="pub-item" data-pubtype="journal" href="https://ieeexplore.ieee.org/document/10315101" target="_blank" rel="noopener">
         <span class="pub-badge journal">Journal</span>
@@ -462,6 +458,17 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         </div>
         <span class="pub-year">2023</span>
       </a>
+      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.3390/en14185713" target="_blank" rel="noopener">
+        <span class="pub-badge journal">Journal</span>
+        <div class="pub-info">
+          <div class="pub-authors">A Rabinowitz, FM Araghi, T Gaikwad, ZD Asher, TH Bradley</div>
+          <div class="pub-title">Development and Evaluation of Velocity Predictive Optimal Energy Management Strategies in Intelligent and Connected Hybrid Electric Vehicles</div>
+          <div class="pub-venue">Energies, 14(18), 5713 &mdash; 39 citations</div>
+        </div>
+        <span class="pub-year">2021</span>
+      </a>
+
+      <!-- ── CONFERENCE PAPERS ── -->
       <a class="pub-item" data-pubtype="conference" href="https://ieeexplore.ieee.org/document/10421872" target="_blank" rel="noopener">
         <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
@@ -492,6 +499,15 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
       <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
         <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
+          <div class="pub-authors">AI Rabinowitz, F Motallebiaraghi, R Meyer, Z Asher, I Kolmanovsky, et al.</div>
+          <div class="pub-title">An Ultra-Light Heuristic Algorithm for Autonomous Optimal Eco-Driving</div>
+          <div class="pub-venue">SAE WCX World Congress Experience</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
+        <div class="pub-info">
           <div class="pub-authors">P Kadav, S Sharma, FM Araghi, ZD Asher</div>
           <div class="pub-title">Development of Computer Vision Models for Drivable Region Detection in Snow Occluded Lane Lines</div>
           <div class="pub-venue">ML &amp; Optimization Techniques for Automotive Cyber-Physical Systems &mdash; 11 citations</div>
@@ -503,7 +519,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <div class="pub-info">
           <div class="pub-authors">P Kadav, N Goberville, F Motallebiaraghi, A Fong, ZD Asher</div>
           <div class="pub-title">Tire Track Identification: Application of U-Net Deep Learning Model for Drivable Region Detection in Snow Occluded Conditions</div>
-          <div class="pub-venue">ITS World Congress 2022 &mdash; 9 citations</div>
+          <div class="pub-venue">ITS World Congress &mdash; 9 citations</div>
         </div>
         <span class="pub-year">2022</span>
       </a>
@@ -516,12 +532,12 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         </div>
         <span class="pub-year">2022</span>
       </a>
-      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.3390/en14185713" target="_blank" rel="noopener">
-        <span class="pub-badge journal">Journal</span>
+      <a class="pub-item" data-pubtype="conference" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
-          <div class="pub-authors">A Rabinowitz, FM Araghi, T Gaikwad, ZD Asher, TH Bradley</div>
-          <div class="pub-title">Development and Evaluation of Velocity Predictive Optimal Energy Management Strategies in Intelligent and Connected Hybrid Electric Vehicles</div>
-          <div class="pub-venue">Energies, 14(18), 5713 &mdash; 39 citations</div>
+          <div class="pub-authors">N Goberville, MM Zoardar, J Rojas, N Brown, F Motallebiaraghi, et al.</div>
+          <div class="pub-title">Techno-Economic Analysis of Fixed-Route Autonomous and Electric Shuttles</div>
+          <div class="pub-venue">SAE WCX Digital Summit 288440 &mdash; 9 citations</div>
         </div>
         <span class="pub-year">2021</span>
       </a>
@@ -534,8 +550,8 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         </div>
         <span class="pub-year">2021</span>
       </a>
-      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.1016/j.ifacol.2021.10.008" target="_blank" rel="noopener">
-        <span class="pub-badge journal">Journal</span>
+      <a class="pub-item" data-pubtype="conference" href="https://doi.org/10.1016/j.ifacol.2021.10.008" target="_blank" rel="noopener">
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-info">
           <div class="pub-authors">YH Mahmoud, NE Brown, F Motallebiaraghi, M Koelling, R Meyer, et al.</div>
           <div class="pub-title">Autonomous Eco-Driving with Traffic Light and Lead Vehicle Constraints: An Application of Best Constrained Interpolation</div>
@@ -552,6 +568,38 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         </div>
         <span class="pub-year">2020</span>
       </a>
+
+      <!-- ── PRESENTATIONS ── -->
+      <a class="pub-item" data-pubtype="presentation" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge presentation">Presentation</span>
+        <div class="pub-info">
+          <div class="pub-authors">P Kadav, NA Goberville, K Prins, A Siems-Anderson, C Walker, et al.</div>
+          <div class="pub-title">Road Snow Coverage Estimation Using Camera and Weather Infrastructure Sensor Inputs</div>
+          <div class="pub-venue">SAE WCX World Congress Experience 288442 &mdash; 4 citations</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+      <a class="pub-item" data-pubtype="presentation" href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&hl=en" target="_blank" rel="noopener">
+        <span class="pub-badge presentation">Presentation</span>
+        <div class="pub-info">
+          <div class="pub-authors">CL Walker, AR Siems-Anderson, ZD Asher, P Kadav, F Motallebiaraghi, et al.</div>
+          <div class="pub-title">Energy Efficient Autonomous Vehicle Operation During Various Weather Conditions</div>
+          <div class="pub-venue">American Meteorological Society Annual Meeting, Abstract 103, 4B.2</div>
+        </div>
+        <span class="pub-year">2023</span>
+      </a>
+
+      <!-- ── PREPRINT ── -->
+      <a class="pub-item" data-pubtype="preprint" href="https://arxiv.org/abs/2512.02381" target="_blank" rel="noopener">
+        <span class="pub-badge preprint">Preprint</span>
+        <div class="pub-info">
+          <div class="pub-authors">FM Araghi, A Abdolmohammadi, N Mojahed, S Nazari</div>
+          <div class="pub-title">Fleet Size and Mix Capacitated Vehicle Routing Problem with Time Windows for Mobile Fast Chargers</div>
+          <div class="pub-venue">arXiv:2512.02381</div>
+        </div>
+        <span class="pub-year">2025</span>
+      </a>
+
     </div>
   </div>
 </section>
