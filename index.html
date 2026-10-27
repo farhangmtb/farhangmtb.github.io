@@ -461,8 +461,8 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <div class="proj-thumb has-img"><img src="images/dcfc-evesco-card.webp" alt="EVESCO mobile DC fast charger charging a UC Davis EV" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status lead">Lead Researcher</span><span class="proj-status completed">Completed</span></div>
-          <h3>Mobile DCFC Field Testing &amp; Evaluation</h3>
-          <p>Comprehensive field evaluation of EVESCO EVES-6060-NA and FreeWire Boost Charger 200 for Caltrans fleet — compatibility, performance, battery management.</p>
+          <h3>Task 4409 &mdash; Mobile DCFC Infrastructure Deployment Opportunities</h3>
+          <p>Procured, installed, and field-tested the EVESCO EVES-6060-NA and FreeWire Boost Charger 200 for Caltrans: 87&ndash;91% efficiency, compatible with all seven priority fleet EVs.</p>
           <div class="proj-tags"><span class="proj-tag">Field Testing</span><span class="proj-tag">EV Charging</span><span class="proj-tag">Caltrans</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
@@ -474,20 +474,32 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status lead">Lead Researcher</span><span class="proj-status ongoing">Ongoing</span></div>
           <h3>Task 4482 &mdash; Lifetime Cost-Benefit Analysis of Mobile DCFC</h3>
-          <p>Lead Researcher on an evidence-based assessment of the economic and operational feasibility of mobile DC fast chargers for Caltrans fleet electrification.</p>
-          <div class="proj-tags"><span class="proj-tag">Cost Modeling</span><span class="proj-tag">Python</span><span class="proj-tag">MATLAB</span></div>
+          <p>Lifetime cost&ndash;benefit analysis of mobile DC fast chargers for Caltrans, using contract pricing for fleet-deployed units and Geotab fleet usage data.</p>
+          <div class="proj-tags"><span class="proj-tag">Lifetime Cost</span><span class="proj-tag">Geotab</span><span class="proj-tag">Python</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
 
       <!-- P3: Task 4483 -->
       <div class="proj-card reveal" data-cat="electrification" onclick="openModal('task4483')">
-        <div class="proj-thumb has-img"><img src="images/mfc-routes-card.webp" alt="Optimized mobile fast-charger service routes in Los Angeles" loading="lazy" width="800" height="480"></div>
+        <div class="proj-thumb has-img"><img src="images/dcfc-install-card.webp" alt="DC fast charger installation at a Caltrans site" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status ongoing">Ongoing</span></div>
           <h3>Task 4483 &mdash; Optimal Planning for EV Charger Deployment</h3>
-          <p>Routing and fleet-sizing optimization for deploying mobile fast chargers to Caltrans fleets, formulated as a fleet size and mix CVRPTW.</p>
-          <div class="proj-tags"><span class="proj-tag">VRP</span><span class="proj-tag">OR-Tools</span><span class="proj-tag">Python</span></div>
+          <p>Optimal planning of the number and specification of EV chargers at each Caltrans facility, delivered as an advisory tool for charger deployment.</p>
+          <div class="proj-tags"><span class="proj-tag">Optimization</span><span class="proj-tag">Energy Demand</span><span class="proj-tag">Planning Tool</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P16: Mobile charger routing -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('mfcroute')">
+        <div class="proj-thumb has-img"><img src="images/mfc-routes-card.webp" alt="Optimized mobile fast-charger service routes in Los Angeles" loading="lazy" width="800" height="480"></div>
+        <div class="proj-body">
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status completed">Under Revision</span></div>
+          <h3>Fleet Sizing &amp; Routing for Mobile Fast Chargers</h3>
+          <p>Fleet size and mix vehicle routing with time windows for mobile fast chargers, solved for Los Angeles and Truckee service scenarios.</p>
+          <div class="proj-tags"><span class="proj-tag">CVRPTW</span><span class="proj-tag">OR-Tools</span><span class="proj-tag">Python</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
@@ -498,8 +510,8 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status ongoing">Ongoing</span></div>
           <h3>Task 4480 &mdash; EV Chargers vs. Public Infrastructure CBA</h3>
-          <p>Cost-benefit framework comparing dedicated on-site EV charger installation against reliance on public charging infrastructure for state fleet operations.</p>
-          <div class="proj-tags"><span class="proj-tag">Policy Analysis</span><span class="proj-tag">Cost-Benefit</span><span class="proj-tag">Python</span></div>
+          <p>Compares installing dedicated DC fast chargers at Caltrans yards and depots with relying on public charging, using fleet data, a charger market scan, and grid-readiness screening.</p>
+          <div class="proj-tags"><span class="proj-tag">Cost-Benefit</span><span class="proj-tag">Grid Readiness</span><span class="proj-tag">Geotab</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
@@ -964,8 +976,8 @@ document.querySelectorAll('[data-pubfilter]').forEach(btn=>{
 /* --- MODAL DATA --- */
 const modals={
   fieldtest:{
-    cat:'Electrification &mdash; Caltrans Task 4409 (Lead Researcher)',
-    title:'Mobile DCFC Field Testing &amp; Evaluation',
+    cat:'Electrification &mdash; Caltrans Task 4409 (Lead Researcher) &middot; Sep 2023 &ndash; Jul 2025',
+    title:'Mobile Electric Vehicle DCFC Infrastructure Deployment Opportunities',
     gallery:[
       {src:'images/dcfc-evesco-ucdavis.webp',cap:'EVESCO EVES-6060-NA mobile charger charging a UC Davis fleet EV.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
       {src:'images/dcfc-freewire-install.webp',cap:'FreeWire Boost Charger 200 during installation.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
@@ -973,62 +985,77 @@ const modals={
       {src:'images/dcfc-sweeper.webp',cap:'Mobile charger with a zero-emission street sweeper in the maintenance yard.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
       {src:'images/dcfc-charge-profile.webp',cap:'Measured SOC, current, voltage, power, and cell temperature while charging a Chevrolet Bolt.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
     ],
-    tags:['EVESCO EVES-6060-NA','FreeWire Boost 200','Field Testing','EV Charging','Caltrans','Battery Management'],
-    overview:'Evaluated mobile and semi-permanent DC fast-charging (DCFC) solutions for the California Department of Transportation\'s growing EV fleet. The project addressed infrastructure gaps delaying charging station deployments and hindering fleet operations by developing a comprehensive evaluation framework to compare two candidate systems under real-world conditions.',
-    how:'Two chargers were procured, installed, and tested extensively across diverse operating conditions: the EVESCO EVES-6060-NA (fully mobile, battery-buffered) and the FreeWire Boost Charger 200 (semi-permanent, up to 200 kW). Testing covered vehicle compatibility across all seven Caltrans priority EVs, charging performance, infrastructure requirements, battery management, and degradation over time. Parameters measured included charging efficiency, power delivery, state-of-charge curves, and public DCFC protocol compatibility (CHAdeMO, CCS).',
-    tech:['EVESCO EVES-6060-NA','FreeWire Boost Charger 200','CHAdeMO / CCS Protocols','Battery Management Systems','Data Acquisition','Python (data analysis)','MATLAB'],
+    tags:['EVESCO EVES-6060-NA','FreeWire Boost Charger 200','Field Testing','Vehicle Compatibility','Battery Degradation','CCS1 / NACS / CHAdeMO','Caltrans Task 4409'],
+    overview:'Caltrans is electrifying its fleet, but gaps in charging infrastructure delay charger deployments and hold back fleet operations. This project identified and evaluated mobile and semi-permanent DC fast-charging (DCFC) solutions, building an evaluation framework to judge how well each fits Caltrans operations and the different EVs in its fleet.',
+    how:'The work covered a product search and review of candidate systems, then procurement, installation, and extended field testing of two chargers under diverse operating conditions: the fully mobile EVESCO EVES-6060-NA and the semi-permanent FreeWire Boost Charger 200. Testing covered vehicle compatibility, charging performance, infrastructure requirements, and battery management, with technical and economic factors such as installation needs, charging efficiency, and battery degradation over time. Charger data was captured with a Python OCR script and processed in MATLAB.',
+    tech:['EVESCO EVES-6060-NA','FreeWire Boost Charger 200','CCS1 / NACS / CHAdeMO','Battery Degradation Analysis','Python (OCR data capture)','MATLAB'],
     results:[
-      'EVESCO EVES-6060-NA: compatible with all 7 Caltrans priority EVs; charging efficiency 87–91%; power delivery 25–45 kW; only 35% public DCFC station compatibility',
-      'FreeWire Boost Charger 200: up to 200 kW delivery; battery degradation concerns identified under current operating parameters — setpoint adjustments recommended',
-      'Both systems enable partial/full operation without immediate reliance on high-capacity utility connections, alleviating infrastructure constraints',
-      'Actionable procurement, deployment, and long-term asset management recommendations delivered to Caltrans'
+      'Measured charging efficiency of 87&ndash;91%; power delivery of 25&ndash;45 kW for the EVES-6060-NA and up to 200 kW for the FreeWire',
+      'EVES-6060-NA compatible with all seven Caltrans priority fleet EVs, but only a 35% success rate (8 of 23) when recharging from public DC fast chargers',
+      'EVES-6060-NA needs a trailer, internet connectivity, and 480 V AC power at Caltrans sites; cold-weather protocols recommended below 40&deg;F',
+      'FreeWire needs permanent foundation work and fire-marshal permitting; its 98.5% battery SOC setpoint accelerates degradation, so a 55&ndash;70% setpoint was recommended to extend battery life',
+      'Both chargers can run partly or fully without an immediate high-capacity utility connection, easing infrastructure constraints'
     ],
-    conclusions:'EVESCO offers fully mobile operation with moderate power delivery — ideal for remote deployment without grid access. FreeWire provides higher throughput but requires more site preparation and permitting. Both fill a critical gap in Caltrans electrification strategy by decoupling fleet charging from permanent grid infrastructure.',
+    conclusions:'The EVES-6060-NA offers fully mobile charging at moderate power, while the FreeWire Boost Charger 200 delivers more throughput but needs more site preparation and permitting. The report gives Caltrans actionable recommendations for procurement planning, deployment, and long-term asset management of mobile and semi-permanent chargers.',
     pubs:[{label:'Caltrans Final Report CA25-4409 — Mobile Electric Vehicle DCFC Infrastructure Deployment Opportunities',url:'https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/final-reports/final-report-task-4409.pdf'}]
   },
   task4482:{
-    cat:'Electrification &mdash; Caltrans Task 4482 (Lead Researcher)',
-    title:'Lifetime Cost-Benefit Analysis of Mobile DC Fast Chargers',
     gallery:[
-      {src:'images/dcfc-evesco-f150.webp',cap:'Mobile DC fast charger charging a UC Davis Ford F-150 Lightning during field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
-      {src:'images/dcfc-fleet-snow.webp',cap:'Truck-mounted mobile charger serving fleet EVs.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
+      {src:'images/dcfc-evesco-f150.webp',cap:'Mobile DC fast charger charging a UC Davis Ford F-150 Lightning during earlier field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
+      {src:'images/dcfc-fleet-snow.webp',cap:'Truck-mounted mobile charger serving fleet EVs during earlier field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
     ],
-    tags:['Cost-Benefit Analysis','Cost Modeling','Mobile DCFC','Python','MATLAB','Caltrans Task 4482'],
-    overview:'Lead Researcher for the Caltrans project &ldquo;Lifetime Cost&ndash;Benefit Analysis of Mobile DC Fast Chargers,&rdquo; building an evidence-based assessment of the economic and operational feasibility of mobile DC fast chargers to support Caltrans&rsquo; fleet electrification planning.',
-    how:'The work builds on UC Davis research on mobile DC fast chargers (MDCFCs) for Caltrans, including system design, cost modeling, and routing optimization in Python, MATLAB, and Google OR-Tools, and on field experience with mobile fast-charging hardware.',
-    tech:['Python','MATLAB','Google OR-Tools','Cost Modeling'],
-    results:['Evidence-based lifetime assessment of mobile DCFC economic and operational feasibility for Caltrans fleet electrification planning'],
-    conclusions:'',
-    pubs:[]
+    cat:'Electrification &mdash; Caltrans Task 4482 (Lead Researcher) &middot; Jun 2025 &ndash; Feb 2027',
+    title:'Lifetime Cost-Benefit Analysis of Mobile DC Fast Chargers',
+    tags:['Lifetime Cost Analysis','Mobile DCFC','Fleet Electrification','Geotab Telematics','Python','Caltrans Task 4482'],
+    overview:'Caltrans&rsquo; growing EV fleet is outpacing its charging infrastructure, and charger shortages cause wait times for vehicles used in maintenance, emergency response, and roadside assistance. Mobile DC fast chargers (MDCFCs) can serve sites with no permanent infrastructure or with temporary demand spikes, such as remote job sites and emergency responses. This project asks whether that investment pays off over the chargers&rsquo; full lifespan.',
+    how:'A lifetime cost analysis covering acquisition, operating, maintenance, and end-of-life costs, weighed against benefits such as fuel savings, lower emissions-related costs, and better operational efficiency. The comparison uses Caltrans contract pricing for the Kempower and Xos Hub units, both already deployed in the Caltrans fleet, which gives a consistent and defensible cost basis. Fleet usage comes from Caltrans Geotab trip data.',
+    tech:['Python','Cost Modeling','Geotab Fleet Data','Scenario Analysis'],
+    results:['Project kickoff in June 2025; coordination with the Caltrans ZEV Planning Tool team, with access to the Caltrans Geotab dataset confirmed','Literature review of journals, conference papers, and technical reports completed','Six months of fleet trip history extracted, with an initial vehicle usage analysis across four representative Caltrans sites','Cost model formulation started for deployment scenarios, operating considerations, and lifecycle cost comparison'],
+    conclusions:'The results will give the Caltrans Division of Equipment evidence on whether mobile DC fast chargers are a cost-effective part of the transition to a zero-emission fleet.',
+    pubs:[{label:'Caltrans Research Notes &mdash; Task 4482 (May 2026)',url:'https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/research-notes/task4482-rns-05-26-a11y.pdf'}]
   },
   task4483:{
-    cat:'Electrification &mdash; Caltrans Task 4483',
+    gallery:[
+      {src:'images/dcfc-freewire-install.webp',cap:'Installing a DC fast charger at a Caltrans site during earlier field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
+    ],
+    cat:'Electrification &mdash; Caltrans Task 4483 &middot; Jul 2025 &ndash; Apr 2027',
     title:'Optimal Planning for EV Charger Deployment',
+    tags:['Optimal Planning','Charger Siting &amp; Sizing','Energy Demand Analysis','Decision Support Tool','Caltrans Task 4483'],
+    overview:'To meet its electrification goals, Caltrans needs to decide how many chargers, and of what specification, each facility should get. That depends on the number and type of EVs at the site and their charging demand, local grid limits, costs, and projected future needs.',
+    how:'Charger placement is formulated as an optimal planning problem that minimizes operating expenses subject to the key site constraints. The study is building an advisory tool that fits into Caltrans operations and recommends charger deployment and specifications for each site.',
+    tech:['Optimization','Site Energy Demand Modeling','Python'],
+    results:['Site-level energy demand analysis completed','Reports delivered on available charger options, the infrastructure each charger type requires, and the cost of new EV chargers'],
+    conclusions:'Planning to each site&rsquo;s actual charging needs and costs reduces equipment downtime, improves fleet productivity, and saves money over the long term.',
+    pubs:[{label:'Caltrans Research Notes &mdash; Task 4483 (May 2026)',url:'https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/research-notes/task4483-rns-05-26-a11y.pdf'}]
+  },
+  mfcroute:{
     gallery:[
       {src:'images/mfc-routes-la.webp',cap:'Optimized mobile fast-charger service routes for the Los Angeles scenario.',credit:'Motallebi Araghi et al., arXiv:2512.02381 (CC BY 4.0)'},
       {src:'images/mfc-routes-truckee.webp',cap:'Optimized service route for the Truckee scenario.',credit:'Motallebi Araghi et al., arXiv:2512.02381 (CC BY 4.0)'}
     ],
-    tags:['Routing Optimization','Vehicle Routing Problem','Mobile Fast Chargers','Python','Google OR-Tools','Caltrans Task 4483'],
-    overview:'Optimization research supporting Caltrans fleet electrification: planning how mobile and fixed EV charging resources should be sized, routed, and deployed to serve state fleet vehicles.',
-    how:'Charger deployment is posed as a routing and fleet-sizing problem. The related paper formulates a fleet size and mix capacitated vehicle routing problem with time windows (CVRPTW) for mobile fast chargers. Models are built in Python and MATLAB, with Google OR-Tools for routing optimization.',
+    cat:'Electrification &mdash; IEEE Transactions on Transportation Electrification (under revision)',
+    title:'Fleet Size and Mix Capacitated Vehicle Routing Problem with Time Windows for Mobile Fast Chargers',
+    tags:['Vehicle Routing','CVRPTW','Fleet Sizing','Mobile Fast Chargers','Python','Google OR-Tools'],
+    overview:'Mobile fast chargers can bring energy to EVs where fixed chargers are missing. Using them well means choosing how many charger vehicles of each size to run and how to route them so every client is served within its time window.',
+    how:'The problem is formulated as a fleet size and mix capacitated vehicle routing problem with time windows (CVRPTW), in which charger vehicles of different battery capacities deliver energy to clients. The models are built in Python and MATLAB, with Google OR-Tools for routing.',
     tech:['Python','MATLAB','Google OR-Tools','Vehicle Routing (CVRPTW)'],
-    results:['Fleet size and mix CVRPTW formulation for mobile fast chargers (arXiv:2512.02381, under revision at IEEE Transactions on Transportation Electrification)'],
+    results:['Optimized service routes and energy delivery schedules for a Los Angeles scenario and a Truckee scenario','Under revision at IEEE Transactions on Transportation Electrification; preprint arXiv:2512.02381'],
     conclusions:'',
-    pubs:[{label:'Fleet Size and Mix CVRPTW for Mobile Fast Chargers — arXiv 2025',url:'https://arxiv.org/abs/2512.02381'}]
+    pubs:[{label:'arXiv:2512.02381',url:'https://arxiv.org/abs/2512.02381'}]
   },
   task4480:{
-    cat:'Electrification &mdash; Caltrans Task 4480',
-    title:'Task 4480 &mdash; Cost-Benefit: EV Chargers vs. Public Infrastructure',
     gallery:[
-      {src:'images/dcfc-freewire-truck.webp',cap:'A dedicated on-site DC fast charger (FreeWire Boost Charger 200) charging a fleet truck during Caltrans field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
+      {src:'images/dcfc-freewire-truck.webp',cap:'A dedicated on-site DC fast charger charging a fleet truck during earlier Caltrans field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
     ],
-    tags:['Cost-Benefit','Fleet Electrification','Python','Caltrans Task 4480'],
-    overview:'A cost-benefit framework comparing dedicated on-site EV charger installation with reliance on public charging infrastructure for Caltrans state fleet operations.',
-    how:'',
-    tech:['Python','Cost Modeling'],
-    results:['Framework supports Caltrans fleet electrification planning and zero-emission fleet transition decisions'],
-    conclusions:'',
-    pubs:[]
+    cat:'Electrification &mdash; Caltrans Task 4480 &middot; May 2025 &ndash; Jan 2027',
+    title:'Cost-Benefit Analysis for Installing EV Chargers vs. Using Public Infrastructure',
+    tags:['Cost-Benefit Analysis','DC Fast Charging','Grid Readiness','Geotab','Fleet Data','Caltrans Task 4480'],
+    overview:'Caltrans is adding EVs to its fleet, including electric heavy equipment and sweepers, but maintenance yards, equipment depots, and construction sites lack enough chargers, which delays daily operations. This project compares installing dedicated chargers at Caltrans facilities with relying on public charging networks, with a focus on high-power DC fast chargers.',
+    how:'The cost-benefit analysis weighs installation, maintenance, and energy costs and the long-term financial impact of owning chargers versus depending on public infrastructure. It accounts for the type and number of EVs, site-specific charging needs, grid capacity, and projected future demand for light- and heavy-duty vehicles.',
+    tech:['Python','Geotab Data','VIN Decoding','Cost Modeling','Grid Capacity Screening'],
+    results:['Vehicle operating data collected for selected sites; fleet attributes (make, model, duty class, model year, fuel type) extracted from Geotab and Caltrans files and cross-validated by VIN decoding','Planning-level market scan of charger power levels, hardware and installed costs, annual O&amp;M and network costs, and service life','Preliminary grid-readiness assessment for four selected sites, covering the transmission and service chain, public utility data, and potential utility-side upgrade triggers','Two common charger installation scenarios defined for cross-site evaluation'],
+    conclusions:'The study will identify the most cost-effective charging strategy for the Caltrans fleet, supporting California&rsquo;s transition to zero-emission vehicles by 2035. Final site costs depend on confirmed utility service conditions and available electrical capacity.',
+    pubs:[{label:'Caltrans Research Notes &mdash; Task 4480 (May 2026)',url:'https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/research-notes/task4480-rns-05-26-a11y.pdf'}]
   },
   fleet:{
     cat:'Electrification',
