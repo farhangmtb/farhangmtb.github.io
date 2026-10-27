@@ -474,8 +474,8 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status lead">Lead Researcher</span><span class="proj-status ongoing">Ongoing</span></div>
           <h3>Task 4482 &mdash; Lifetime Cost-Benefit Analysis of Mobile DCFC</h3>
-          <p>Lifetime cost&ndash;benefit analysis of mobile DC fast chargers for Caltrans, using contract pricing for fleet-deployed units and Geotab fleet usage data.</p>
-          <div class="proj-tags"><span class="proj-tag">Lifetime Cost</span><span class="proj-tag">Geotab</span><span class="proj-tag">Python</span></div>
+          <p>Lifetime cost&ndash;benefit of mobile DC fast chargers vs. fixed DCFC and diesel at four Caltrans stations, with MILP charger sizing, real utility tariffs, and a year of Geotab fleet data.</p>
+          <div class="proj-tags"><span class="proj-tag">Lifetime Cost</span><span class="proj-tag">MILP</span><span class="proj-tag">Geotab</span><span class="proj-tag">Python</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
@@ -500,6 +500,20 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
           <h3>Fleet Sizing &amp; Routing for Mobile Fast Chargers</h3>
           <p>Fleet size and mix vehicle routing with time windows for mobile fast chargers, solved for Los Angeles and Truckee service scenarios.</p>
           <div class="proj-tags"><span class="proj-tag">CVRPTW</span><span class="proj-tag">OR-Tools</span><span class="proj-tag">Python</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P17: Charging protocol analysis -->
+      <div class="proj-card reveal" data-cat="electrification" onclick="openModal('chargeproto')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#0e2420 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="18" width="18" height="34" rx="3" stroke="#3ddc97" stroke-width="1.5"/><path d="M14 28l4-6v6h4l-4 6v-6z" stroke="#3ddc97" stroke-width="1.2" stroke-linejoin="round"/><path d="M26 36h8" stroke="#5b9dff" stroke-width="1.5"/><path d="M34 36 l3 -8 l4 16 l4 -16 l4 16 l4 -16 l3 8" stroke="#f9a826" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 60h56" stroke="#1f2a37" stroke-width="1.5"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status completed">2025</span></div>
+          <h3>EV Charging Communication &amp; Interoperability Analysis</h3>
+          <p>Captured and decoded PLC/SLAC charger&ndash;vehicle handshakes across public networks and mobile DC chargers to diagnose session failures and power limits.</p>
+          <div class="proj-tags"><span class="proj-tag">PLC / SLAC</span><span class="proj-tag">Keysight</span><span class="proj-tag">Python</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
@@ -602,10 +616,24 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
           <svg viewBox="0 0 72 72" fill="none"><circle cx="12" cy="24" r="5" stroke="#5b9dff" stroke-width="1.5"/><circle cx="12" cy="48" r="5" stroke="#5b9dff" stroke-width="1.5"/><circle cx="36" cy="16" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="36" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="56" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="60" cy="36" r="5" stroke="#5b9dff" stroke-width="1.5"/><path d="M17 24L31 16M17 24L31 36M17 24L31 56M17 48L31 16M17 48L31 36M17 48L31 56M41 16L55 36M41 36L55 36M41 56L55 36" stroke="#1f2a37" stroke-width="1"/><path d="M17 24L31 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/><path d="M41 36L55 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/><text x="22" y="9" fill="#3ddc97" font-size="7" font-family="monospace" opacity=".8">F=ma</text></svg>
         </div>
         <div class="proj-body">
-          <div class="proj-status-row"><span class="proj-cat-badge">ML &amp; Modeling</span></div>
-          <h3>Physics-Informed Vehicle Energy Prediction</h3>
-          <p>Physics-informed ML method for vehicle energy and fuel prediction, aimed at lower data requirements and faster computation while preserving accuracy.</p>
-          <div class="proj-tags"><span class="proj-tag">Physics-Informed ML</span><span class="proj-tag">Python</span><span class="proj-tag">In Progress</span></div>
+          <div class="proj-status-row"><span class="proj-cat-badge">ML &amp; Modeling</span><span class="proj-status completed">80&times; Lower Error</span></div>
+          <h3>EV-PINO: Physics-Informed Neural Operator for EV Power</h3>
+          <p>Fourier neural operator with embedded differentiable vehicle physics, cutting validation error from 108.49 kW to 1.35 kW on real Tesla Model 3 telemetry while estimating drag, rolling resistance, and mass.</p>
+          <div class="proj-tags"><span class="proj-tag">Neural Operators</span><span class="proj-tag">Physics-Informed ML</span><span class="proj-tag">PyTorch</span></div>
+          <button class="view-btn">View Details &rarr;</button>
+        </div>
+      </div>
+
+      <!-- P18: Drive-cycle selector -->
+      <div class="proj-card reveal" data-cat="ml" onclick="openModal('drivecycle')">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#18102a 0%,#0e1828 100%)">
+          <svg viewBox="0 0 72 72" fill="none"><path d="M8 56h56M8 56V12" stroke="#1f2a37" stroke-width="1.5"/><path d="M10 54 L16 40 L22 46 L28 26 L34 34 L40 22 L46 38 L52 30 L58 44 L64 50" stroke="#3ddc97" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M10 54 L18 44 L26 36 L34 32 L42 30 L50 36 L58 46 L64 52" stroke="#5b9dff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".8"/></svg>
+        </div>
+        <div class="proj-body">
+          <div class="proj-status-row"><span class="proj-cat-badge">ML &amp; Modeling</span><span class="proj-status completed">2026</span></div>
+          <h3>Real-World Drive-Cycle Selection for FASTSim Calibration</h3>
+          <p>Pipeline that pulls 1&nbsp;Hz Geotab speed data for fleet BEVs and ranks trips against EPA cycles to pick 180 representative drive cycles for model calibration.</p>
+          <div class="proj-tags"><span class="proj-tag">Geotab API</span><span class="proj-tag">FASTSim</span><span class="proj-tag">Python</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
       </div>
@@ -1009,8 +1037,8 @@ const modals={
     tags:['Lifetime Cost Analysis','Mobile DCFC','Fleet Electrification','Geotab Telematics','Python','Caltrans Task 4482'],
     overview:'Caltrans&rsquo; growing EV fleet is outpacing its charging infrastructure, and charger shortages cause wait times for vehicles used in maintenance, emergency response, and roadside assistance. Mobile DC fast chargers (MDCFCs) can serve sites with no permanent infrastructure or with temporary demand spikes, such as remote job sites and emergency responses. This project asks whether that investment pays off over the chargers&rsquo; full lifespan.',
     how:'A lifetime cost analysis covering acquisition, operating, maintenance, and end-of-life costs, weighed against benefits such as fuel savings, lower emissions-related costs, and better operational efficiency. The comparison uses Caltrans contract pricing for the Kempower and Xos Hub units, both already deployed in the Caltrans fleet, which gives a consistent and defensible cost basis. Fleet usage comes from Caltrans Geotab trip data.',
-    tech:['Python','Cost Modeling','Geotab Fleet Data','Scenario Analysis'],
-    results:['Project kickoff in June 2025; coordination with the Caltrans ZEV Planning Tool team, with access to the Caltrans Geotab dataset confirmed','Literature review of journals, conference papers, and technical reports completed','Six months of fleet trip history extracted, with an initial vehicle usage analysis across four representative Caltrans sites','Cost model formulation started for deployment scenarios, operating considerations, and lifecycle cost comparison'],
+    tech:['Python','Gurobi / HiGHS (MILP)','Time-Series SoC Simulation','Utility Tariff Modeling','Geotab Fleet Data','Scenario Analysis'],
+    results:['Project kickoff in June 2025; coordination with the Caltrans ZEV Planning Tool team, with access to the Caltrans Geotab dataset confirmed','Literature review of journals, conference papers, and technical reports completed','Day-by-day charging demand reconstructed from roughly a year of Geotab trip and state-of-charge data at four maintenance stations (Sacramento, Fresno, Glendale, San Diego)','Four charging options compared for each site and day: fixed DC fast chargers, Xos Hub battery trailers, Kempower portable DC chargers, and diesel gensets','Charger fleets sized with an exact MILP (Kempower, fixed DCFC) and a 15-minute battery state-of-charge simulation (Xos Hub), costed under each site&rsquo;s actual utility tariff (SMUD, PG&amp;E BEV-2, SDG&amp;E EV-HP)','Preliminary results: mobile and portable chargers avoid most of the utility demand charges that dominate fixed DCFC costs, giving several-fold lower daily costs at high-demand sites'],
     conclusions:'The results will give the Caltrans Division of Equipment evidence on whether mobile DC fast chargers are a cost-effective part of the transition to a zero-emission fleet.',
     pubs:[{label:'Caltrans Research Notes &mdash; Task 4482 (May 2026)',url:'https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/research-notes/task4482-rns-05-26-a11y.pdf'}]
   },
@@ -1042,6 +1070,17 @@ const modals={
     results:['Optimized service routes and energy delivery schedules for a Los Angeles scenario and a Truckee scenario','Under revision at IEEE Transactions on Transportation Electrification; preprint arXiv:2512.02381'],
     conclusions:'',
     pubs:[{label:'arXiv:2512.02381',url:'https://arxiv.org/abs/2512.02381'}]
+  },
+  chargeproto:{
+    cat:'Electrification &mdash; UC Davis, AHMCT Research Center &middot; 2025',
+    title:'EV Charging Communication &amp; Interoperability Analysis',
+    tags:['PLC / SLAC','ISO 15118-3','Keysight Protocol Analysis','Interoperability','Python'],
+    overview:'When a DC fast-charging session fails or delivers less power than expected, the cause is often in the digital handshake between charger and vehicle rather than in the power hardware. This work recorded that communication directly to see what each side negotiates.',
+    how:'Charging sessions were captured with Keysight equipment at the power-line communication (PLC/SLAC) layer, across public networks (ChargePoint, EVgo, Electrify America) and mobile or semi-permanent DC chargers (EVESCO EVES-6060, FreeWire, Xos Hub), including sessions with fleet EVs and electric heavy equipment. Custom Python analyzers parsed the traces, reconstructed each session, extracted the voltage, current, and power limits negotiated by both sides, and compared sessions across chargers.',
+    tech:['Keysight Protocol Capture','Python','Pandas','Matplotlib'],
+    results:['Session traces collected and decoded for public networks and mobile DC chargers','Automated reports of negotiated limits versus delivered power for each charger','Side-by-side session comparisons across chargers to support mobile-charger compatibility testing'],
+    conclusions:'Looking at the protocol layer turns vague &ldquo;charger didn&rsquo;t work&rdquo; reports into specific, fixable causes, which matters when fleets mix vehicles and chargers from many vendors.',
+    pubs:[]
   },
   task4480:{
     gallery:[
@@ -1113,18 +1152,29 @@ const modals={
     ]
   },
   pinn:{
-    cat:'ML &amp; Modeling &mdash; UC Davis (in progress)',
-    title:'Physics-Informed Vehicle Energy Prediction',
-    tags:['Physics-Informed ML','Energy Prediction','Fuel Prediction','Python'],
-    overview:'Developing a physics-informed machine learning method for vehicle energy and fuel consumption prediction, aimed at lower data requirements and faster computation while preserving accuracy.',
-    how:'The method combines vehicle physics with machine learning, building on earlier deep-learning models of vehicle emissions and fuel economy and on ANN-based vehicle velocity prediction.',
-    tech:['Python','PyTorch','Physics-Informed ML'],
-    results:['In progress: targeting lower data requirements and faster computation than purely data-driven models, without loss of accuracy'],
-    conclusions:'',
+    cat:'ML &amp; Modeling &mdash; UC Davis, AHMCT Research Center &middot; 2025 &ndash; 2026',
+    title:'EV-PINO: Physics-Informed Neural Operator for Electric Vehicle Power Prediction',
+    tags:['Fourier Neural Operator','Physics-Informed ML','Differentiable Physics','Parameter Estimation','Tesla Model 3','PyTorch'],
+    overview:'Predicting instantaneous battery power from driving data is central to EV range, charging, and fleet energy planning. This project independently replicated a published physics-informed neural network (PINN) model for EV power prediction, then substantially improved it, while also recovering interpretable vehicle parameters from the data.',
+    how:'Instead of adding physics as a residual penalty in the loss, a differentiable longitudinal vehicle-dynamics module is embedded in the forward pass of a Fourier Neural Operator (FNO) backbone. From speed and acceleration alone, the model predicts battery power and jointly estimates drag coefficient, rolling resistance, effective mass, motor efficiency, and regenerative braking efficiency. It was trained and validated on real-world Tesla Model 3 telemetry.',
+    tech:['Python','PyTorch','Fourier Neural Operators','Differentiable Physics','Geotab Telematics'],
+    results:['Validation MAE reduced from 108.49 kW (replicated baseline) to 1.35 kW, an 80&times; reduction','Test MAE of 0.33 kW and R&sup2; of 0.980','Physically plausible parameter estimates: effective mass 1998 kg (factory 1847&ndash;1961 kg) and drag coefficient 0.249 (factory 0.23)'],
+    conclusions:'Embedding the physics in the network, rather than only in the loss, gives far more accurate power prediction and parameters an engineer can check, which makes the model useful as a fast surrogate for fleet energy studies.',
     pubs:[
       {label:'High-Fidelity Modeling of Vehicle Fuel Economy Using Deep Neural Networks — SAE 2021',url:'https://scholar.google.com/scholar?q=%22High-Fidelity+Modeling+of+Light-Duty+Vehicle+Emission+and+Fuel+Economy+Using+Deep+Neural+Networks%22'},
       {label:'Vehicle Velocity Prediction Using ANNs — SAE WCX 2020',url:'https://scholar.google.com/scholar?q=%22Vehicle+Velocity+Prediction+Using+Artificial+Neural+Networks+and+Effect+of+Real-World+Signals%22'}
     ]
+  },
+  drivecycle:{
+    cat:'ML &amp; Modeling &mdash; UC Davis, AHMCT Research Center &middot; 2026',
+    title:'Real-World Drive-Cycle Selection for Vehicle Model Calibration',
+    tags:['Geotab API','Drive Cycles','UDDS / HWFET / US06','NREL FASTSim','Python','Student Mentoring'],
+    overview:'Vehicle energy models such as NREL FASTSim are only as good as the drive cycles used to calibrate and validate them. Standard EPA cycles do not reflect how state fleet vehicles are actually driven, so this project built a repeatable way to pick representative real-world cycles from fleet telematics.',
+    how:'The pipeline pulls second-by-second speed and GPS data from Geotab, splits it into trips, cleans and resamples each trip to 1&nbsp;Hz, and computes driving features (mean and spread of non-zero speed and of absolute acceleration). Each trip is scored against the UDDS, HWFET, and US06 cycles with a normalized weighted error, and the best matches are selected independently for each vehicle.',
+    tech:['Python','Geotab API','Pandas','NumPy','pytest','NREL FASTSim'],
+    results:['180 representative drive cycles selected: 20 for each of 9 vehicles across Tesla Model 3, Ford F-150 Lightning, and Volkswagen ID.4','Portable, documented pipeline handed off to a student researcher with step-by-step instructions'],
+    conclusions:'Calibrating on cycles drawn from the fleet&rsquo;s own driving gives energy estimates that match how the vehicles are really used.',
+    pubs:[]
   },
   grants:{
     cat:'Leadership &mdash; UC Davis',
