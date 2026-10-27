@@ -616,9 +616,9 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
           <svg viewBox="0 0 72 72" fill="none"><circle cx="12" cy="24" r="5" stroke="#5b9dff" stroke-width="1.5"/><circle cx="12" cy="48" r="5" stroke="#5b9dff" stroke-width="1.5"/><circle cx="36" cy="16" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="36" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="56" r="5" stroke="#3ddc97" stroke-width="1.5"/><circle cx="60" cy="36" r="5" stroke="#5b9dff" stroke-width="1.5"/><path d="M17 24L31 16M17 24L31 36M17 24L31 56M17 48L31 16M17 48L31 36M17 48L31 56M41 16L55 36M41 36L55 36M41 56L55 36" stroke="#1f2a37" stroke-width="1"/><path d="M17 24L31 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/><path d="M41 36L55 36" stroke="#3ddc97" stroke-width="1.5" opacity=".8"/><text x="22" y="9" fill="#3ddc97" font-size="7" font-family="monospace" opacity=".8">F=ma</text></svg>
         </div>
         <div class="proj-body">
-          <div class="proj-status-row"><span class="proj-cat-badge">ML &amp; Modeling</span><span class="proj-status completed">80&times; Lower Error</span></div>
+          <div class="proj-status-row"><span class="proj-cat-badge">ML &amp; Modeling</span><span class="proj-status ongoing">In Progress</span></div>
           <h3>EV-PINO: Physics-Informed Neural Operator for EV Power</h3>
-          <p>Fourier neural operator with embedded differentiable vehicle physics, cutting validation error from 108.49 kW to 1.35 kW on real Tesla Model 3 telemetry while estimating drag, rolling resistance, and mass.</p>
+          <p>Fourier neural operator with embedded differentiable vehicle physics for EV battery power prediction and vehicle parameter estimation; early results on Tesla Model 3 telemetry show large error reductions.</p>
           <div class="proj-tags"><span class="proj-tag">Neural Operators</span><span class="proj-tag">Physics-Informed ML</span><span class="proj-tag">PyTorch</span></div>
           <button class="view-btn">View Details &rarr;</button>
         </div>
@@ -1152,14 +1152,14 @@ const modals={
     ]
   },
   pinn:{
-    cat:'ML &amp; Modeling &mdash; UC Davis, AHMCT Research Center &middot; 2025 &ndash; 2026',
+    cat:'ML &amp; Modeling &mdash; UC Davis, AHMCT Research Center &middot; 2025 &ndash; present (in progress)',
     title:'EV-PINO: Physics-Informed Neural Operator for Electric Vehicle Power Prediction',
     tags:['Fourier Neural Operator','Physics-Informed ML','Differentiable Physics','Parameter Estimation','Tesla Model 3','PyTorch'],
     overview:'Predicting instantaneous battery power from driving data is central to EV range, charging, and fleet energy planning. This project independently replicated a published physics-informed neural network (PINN) model for EV power prediction, then substantially improved it, while also recovering interpretable vehicle parameters from the data.',
     how:'Instead of adding physics as a residual penalty in the loss, a differentiable longitudinal vehicle-dynamics module is embedded in the forward pass of a Fourier Neural Operator (FNO) backbone. From speed and acceleration alone, the model predicts battery power and jointly estimates drag coefficient, rolling resistance, effective mass, motor efficiency, and regenerative braking efficiency. It was trained and validated on real-world Tesla Model 3 telemetry.',
     tech:['Python','PyTorch','Fourier Neural Operators','Differentiable Physics','Geotab Telematics'],
-    results:['Validation MAE reduced from 108.49 kW (replicated baseline) to 1.35 kW, an 80&times; reduction','Test MAE of 0.33 kW and R&sup2; of 0.980','Physically plausible parameter estimates: effective mass 1998 kg (factory 1847&ndash;1961 kg) and drag coefficient 0.249 (factory 0.23)'],
-    conclusions:'Embedding the physics in the network, rather than only in the loss, gives far more accurate power prediction and parameters an engineer can check, which makes the model useful as a fast surrogate for fleet energy studies.',
+    results:['Work in progress; preliminary results on Tesla Model 3 telemetry:','Validation MAE reduced from 108.49 kW (replicated baseline) to 1.35 kW','Test MAE of 0.33 kW and R&sup2; of 0.980','Physically plausible parameter estimates: effective mass 1998 kg (factory 1847&ndash;1961 kg) and drag coefficient 0.249 (factory 0.23)'],
+    conclusions:'Early results suggest that embedding the physics in the network, rather than only in the loss, gives more accurate power prediction and parameters an engineer can check. Ongoing work is extending and validating the approach.',
     pubs:[
       {label:'High-Fidelity Modeling of Vehicle Fuel Economy Using Deep Neural Networks — SAE 2021',url:'https://scholar.google.com/scholar?q=%22High-Fidelity+Modeling+of+Light-Duty+Vehicle+Emission+and+Fuel+Economy+Using+Deep+Neural+Networks%22'},
       {label:'Vehicle Velocity Prediction Using ANNs — SAE WCX 2020',url:'https://scholar.google.com/scholar?q=%22Vehicle+Velocity+Prediction+Using+Artificial+Neural+Networks+and+Effect+of+Real-World+Signals%22'}
