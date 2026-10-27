@@ -123,6 +123,9 @@ ul.tl-desc li{margin-bottom:5px}
 .proj-card.hidden{display:none}
 .proj-thumb{height:160px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .proj-thumb svg{width:72px;height:72px}
+.proj-thumb.has-img{background:#fff;overflow:hidden}
+.proj-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.proj-card:hover .proj-thumb img{transform:scale(1.04)}
 .proj-body{padding:20px;display:flex;flex-direction:column;flex:1}
 .proj-cat-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);background:rgba(61,220,151,.1);border:1px solid rgba(61,220,151,.25);padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:10px;align-self:flex-start}
 .proj-body h3{font-weight:600;font-size:17px;line-height:1.35;margin-bottom:8px;letter-spacing:-.01em}
@@ -149,6 +152,14 @@ ul.tl-desc li{margin-bottom:5px}
 .modal-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px}
 .modal-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;padding:5px 12px;background:var(--bg-2);border:1px solid var(--line);border-radius:6px;color:var(--text)}
 .modal-hr{height:1px;background:var(--line);margin:0 0 28px}
+.modal-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:28px}
+.modal-fig{margin:0;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.modal-fig.lead{grid-column:1/-1}
+.modal-fig img{width:100%;display:block;background:#fff;max-height:420px;object-fit:contain}
+.modal-fig:not(.lead) img{height:190px;object-fit:contain}
+.modal-fig figcaption{font-size:13px;line-height:1.5;color:var(--muted);padding:10px 12px}
+.modal-fig figcaption span{display:block;color:var(--dim);font-size:11px;margin-top:3px}
+@media(max-width:600px){.modal-gallery{grid-template-columns:1fr}.modal-fig:not(.lead) img{height:auto;max-height:300px;object-fit:contain}}
 .modal-sec{margin-bottom:26px}
 .modal-sec:last-child{margin-bottom:0}
 .modal-sec h4{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em}
@@ -165,6 +176,9 @@ ul.tl-desc li{margin-bottom:5px}
 .pub-item{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;transition:.2s;text-decoration:none;color:inherit}
 .pub-item:hover{border-color:var(--accent-2);transform:translateX(4px)}
 .pub-item.hidden{display:none}
+.pub-item.has-thumb{grid-template-columns:auto 96px 1fr auto}
+.pub-thumb{width:96px;height:64px;border-radius:6px;object-fit:cover;background:#fff;border:1px solid var(--line)}
+.pub-badge.report{background:rgba(255,120,120,.1);color:#ff8f8f;border:1px solid rgba(255,120,120,.3)}
 .pub-badge{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:4px 10px;border-radius:20px;font-weight:600;white-space:nowrap;align-self:flex-start;margin-top:2px}
 .pub-badge.journal{background:rgba(91,157,255,.15);color:var(--accent-2);border:1px solid rgba(91,157,255,.3)}
 .pub-badge.conference{background:rgba(61,220,151,.1);color:var(--accent);border:1px solid rgba(61,220,151,.25)}
@@ -180,6 +194,8 @@ ul.tl-desc li{margin-bottom:5px}
 @media(max-width:600px){
   .pub-item{grid-template-columns:1fr auto;gap:10px;padding:16px}
   .pub-badge{justify-self:start}
+  .pub-item.has-thumb{grid-template-columns:1fr auto}
+  .pub-thumb{display:none}
   .pub-info{grid-column:1/-1;grid-row:2}
   .pub-item:hover{transform:none}
 }
@@ -404,9 +420,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P11: Koopman -->
       <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('koopman')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0e1828 0%,#0c2218 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><path d="M8 54 C 24 54 26 18 40 18 S 56 40 64 30" stroke="#3ddc97" stroke-width="2" stroke-linecap="round"/><path d="M8 58 C 24 58 28 24 40 24 S 56 46 64 36" stroke="#5b9dff" stroke-width="1.5" stroke-dasharray="4 3" stroke-linecap="round"/><rect x="34" y="12" width="12" height="12" rx="2" stroke="#3ddc97" stroke-width="1.2"/><path d="M8 64h56M8 64V10" stroke="#1f2a37" stroke-width="1"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/koopman-card.webp" alt="Deep bilinear Koopman network architecture" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Autonomy &amp; Controls</span><span class="proj-status completed">IEEE Access 2026</span></div>
           <h3>Deep Bilinear Koopman Model for Real-Time Vehicle MPC</h3>
@@ -418,9 +432,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P12: HIL/SIL -->
       <div class="proj-card reveal" data-cat="autonomy" onclick="openModal('hil')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#101a28 0%,#0a1e14 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="16" width="26" height="40" rx="3" stroke="#3ddc97" stroke-width="1.5"/><path d="M13 24h16M13 30h16M13 36h16M13 42h10" stroke="#3ddc97" stroke-width="1.2" opacity=".6" stroke-linecap="round"/><rect x="42" y="22" width="22" height="16" rx="2" stroke="#5b9dff" stroke-width="1.5"/><path d="M53 38v8M46 50h14" stroke="#5b9dff" stroke-width="1.5" stroke-linecap="round"/><path d="M34 28h8M34 34h8" stroke="#f9a826" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/hil-card.webp" alt="dSPACE SCALEXIO HIL bench at UC Davis" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Autonomy &amp; Controls</span><span class="proj-status lead">Lead</span></div>
           <h3>dSPACE SCALEXIO HIL/SIL Test Environment</h3>
@@ -446,11 +458,9 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P1: DCFC Field Testing -->
       <div class="proj-card reveal" data-cat="electrification" onclick="openModal('fieldtest')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0c2218 0%,#081828 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><rect x="6" y="28" width="60" height="30" rx="4" stroke="#3ddc97" stroke-width="1.5"/><path d="M14 28v-6a6 6 0 0 1 12 0v6M36 28v-6a6 6 0 0 1 12 0v6" stroke="#5b9dff" stroke-width="1.5"/><path d="M18 44h8M46 44h8" stroke="#3ddc97" stroke-width="2" stroke-linecap="round"/><path d="M36 36l3-6 3 6h-6z" fill="#3ddc97"/><circle cx="14" cy="58" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="58" cy="58" r="6" stroke="#3ddc97" stroke-width="1.5"/><path d="M20 58h32" stroke="#1f3a2a" stroke-width="1"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/dcfc-evesco-card.webp" alt="EVESCO mobile DC fast charger charging a UC Davis EV" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
-          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status completed">Completed</span></div>
+          <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status lead">Lead Researcher</span><span class="proj-status completed">Completed</span></div>
           <h3>Mobile DCFC Field Testing &amp; Evaluation</h3>
           <p>Comprehensive field evaluation of EVESCO EVES-6060-NA and FreeWire Boost Charger 200 for Caltrans fleet — compatibility, performance, battery management.</p>
           <div class="proj-tags"><span class="proj-tag">Field Testing</span><span class="proj-tag">EV Charging</span><span class="proj-tag">Caltrans</span></div>
@@ -460,9 +470,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P2: Task 4482 -->
       <div class="proj-card reveal" data-cat="electrification" onclick="openModal('task4482')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#1e1a0a 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="14" width="56" height="46" rx="4" stroke="#3ddc97" stroke-width="1.5"/><path d="M8 26h56" stroke="#1f2a37" stroke-width="1"/><rect x="14" y="34" width="10" height="20" rx="1" fill="#3ddc97" opacity=".35"/><rect x="31" y="40" width="10" height="14" rx="1" fill="#5b9dff" opacity=".4"/><rect x="48" y="36" width="10" height="18" rx="1" fill="#3ddc97" opacity=".55"/><path d="M14 32l10-8 18 10 16-14" stroke="#5b9dff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="14" cy="32" r="2" fill="#5b9dff"/><circle cx="58" cy="20" r="2" fill="#5b9dff"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/dcfc-f150-card.webp" alt="Mobile DC fast charger charging a UC Davis Ford F-150 Lightning" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status lead">Lead Researcher</span><span class="proj-status ongoing">Ongoing</span></div>
           <h3>Task 4482 &mdash; Lifetime Cost-Benefit Analysis of Mobile DCFC</h3>
@@ -474,9 +482,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P3: Task 4483 -->
       <div class="proj-card reveal" data-cat="electrification" onclick="openModal('task4483')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e14 0%,#0a1428 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><circle cx="20" cy="20" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="52" cy="20" r="6" stroke="#3ddc97" stroke-width="1.5"/><circle cx="36" cy="52" r="6" stroke="#5b9dff" stroke-width="1.5"/><path d="M26 20h20M23 25l10 21M49 25l-10 21" stroke="#1f3a2a" stroke-width="1.5" stroke-dasharray="3 2"/><circle cx="20" cy="20" r="2.5" fill="#3ddc97"/><circle cx="52" cy="20" r="2.5" fill="#3ddc97"/><circle cx="36" cy="52" r="2.5" fill="#5b9dff"/><path d="M36 20v-8M36 12l-4 4h8l-4-4z" stroke="#3ddc97" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/mfc-routes-card.webp" alt="Optimized mobile fast-charger service routes in Los Angeles" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status ongoing">Ongoing</span></div>
           <h3>Task 4483 &mdash; Optimal Planning for EV Charger Deployment</h3>
@@ -488,9 +494,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P4: Task 4480 -->
       <div class="proj-card reveal" data-cat="electrification" onclick="openModal('task4480')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0f1a0a 0%,#1a1f0a 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="20" width="24" height="36" rx="4" stroke="#3ddc97" stroke-width="1.5"/><rect x="40" y="20" width="24" height="36" rx="4" stroke="#5b9dff" stroke-width="1.5" stroke-dasharray="5 2"/><path d="M32 38h8" stroke="#f9a826" stroke-width="2" stroke-linecap="round"/><path d="M36 34v8" stroke="#f9a826" stroke-width="2" stroke-linecap="round"/><path d="M14 32h12M14 38h12M14 44h8" stroke="#3ddc97" stroke-width="1.2" opacity=".6" stroke-linecap="round"/><path d="M46 32h12M46 38h12M46 44h8" stroke="#5b9dff" stroke-width="1.2" opacity=".6" stroke-linecap="round"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/dcfc-freewire-card.webp" alt="FreeWire Boost Charger 200 charging a fleet truck" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status ongoing">Ongoing</span></div>
           <h3>Task 4480 &mdash; EV Chargers vs. Public Infrastructure CBA</h3>
@@ -502,9 +506,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P5: Fleet Electrification -->
       <div class="proj-card reveal" data-cat="electrification" onclick="openModal('fleet')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#0e1a26 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><rect x="8" y="32" width="56" height="26" rx="4" stroke="#3ddc97" stroke-width="1.5"/><path d="M18 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5"/><path d="M34 32v-8a10 10 0 0 1 20 0v8" stroke="#5b9dff" stroke-width="1.5" stroke-dasharray="4 2"/><path d="M14 42h10M48 42h10" stroke="#3ddc97" stroke-width="1.5" stroke-linecap="round"/><path d="M32 44l4-8 4 8h-8z" fill="#3ddc97"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/dcfc-fleet-card.webp" alt="Fleet EVs charging from a mobile charger" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span></div>
           <h3>EV Fleet Electrification Analysis</h3>
@@ -558,9 +560,7 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
 
       <!-- P14: Predictive EMS -->
       <div class="proj-card reveal" data-cat="electrification" onclick="openModal('ems')">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#101a28 100%)">
-          <svg viewBox="0 0 72 72" fill="none"><rect x="10" y="10" width="14" height="30" rx="3" stroke="#5b9dff" stroke-width="1.5"/><circle cx="17" cy="18" r="3" fill="#f9a826" opacity=".7"/><circle cx="17" cy="26" r="3" stroke="#5b9dff" stroke-width="1"/><circle cx="17" cy="34" r="3" fill="#3ddc97" opacity=".7"/><path d="M17 40v22" stroke="#1f2a37" stroke-width="1.5"/><path d="M30 54 Q 42 30 64 26" stroke="#3ddc97" stroke-width="2" stroke-linecap="round"/><path d="M30 60h34" stroke="#1f2a37" stroke-width="1" stroke-dasharray="4 3"/></svg>
-        </div>
+        <div class="proj-thumb has-img"><img src="images/ems-card.webp" alt="Test route with signalized intersections" loading="lazy" width="800" height="480"></div>
         <div class="proj-body">
           <div class="proj-status-row"><span class="proj-cat-badge">Electrification</span><span class="proj-status completed">DOE Project</span></div>
           <h3>Predictive Energy Management with Intelligent Traffic Systems</h3>
@@ -626,12 +626,14 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
       <button class="filt-btn" data-pubfilter="conference">Conference</button>
       <button class="filt-btn" data-pubfilter="presentation">Presentation</button>
       <button class="filt-btn" data-pubfilter="preprint">Preprint</button>
+      <button class="filt-btn" data-pubfilter="report">Report</button>
     </div>
-    <p class="pub-note reveal">Journal articles, conference papers, preprints, and talks. Full list on <a href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    <p class="pub-note reveal">Journal articles, conference papers, preprints, reports, and talks. Full list on <a href="https://scholar.google.com/citations?user=wFJfzn4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
     <div class="reveal">
 
-      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.1109/ACCESS.2026.3662607" target="_blank" rel="noopener">
+      <a class="pub-item has-thumb" data-pubtype="journal" href="https://doi.org/10.1109/ACCESS.2026.3662607" target="_blank" rel="noopener">
         <span class="pub-badge journal">Journal</span>
+        <img class="pub-thumb" src="images/koopman-card.webp" alt="Koopman network architecture" loading="lazy">
         <div class="pub-info">
           <div class="pub-authors">M Abtahi, <b>F Motallebi Araghi</b>, N Mojahed, S Nazari</div>
           <div class="pub-title">Deep Bilinear Koopman Model for Real-Time Vehicle Control in Frenet Frame</div>
@@ -640,12 +642,24 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <span class="pub-year">2026</span>
       </a>
 
-      <a class="pub-item" data-pubtype="preprint" href="https://arxiv.org/abs/2512.02381" target="_blank" rel="noopener">
+      <a class="pub-item has-thumb" data-pubtype="preprint" href="https://arxiv.org/abs/2512.02381" target="_blank" rel="noopener">
         <span class="pub-badge preprint">Preprint</span>
+        <img class="pub-thumb" src="images/mfc-routes-card.webp" alt="Optimized mobile charger routes" loading="lazy">
         <div class="pub-info">
           <div class="pub-authors"><b>F Motallebi Araghi</b>, A Abdolmohammadi, N Mojahed, S Nazari</div>
           <div class="pub-title">Fleet Size and Mix Capacitated Vehicle Routing Problem with Time Windows for Mobile Fast Chargers</div>
           <div class="pub-venue">arXiv:2512.02381 &middot; under revision, IEEE Transactions on Transportation Electrification</div>
+        </div>
+        <span class="pub-year">2025</span>
+      </a>
+
+      <a class="pub-item has-thumb" data-pubtype="report" href="https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/final-reports/final-report-task-4409.pdf" target="_blank" rel="noopener">
+        <span class="pub-badge report">Report</span>
+        <img class="pub-thumb" src="images/dcfc-evesco-card.webp" alt="Mobile DC fast charger field testing" loading="lazy">
+        <div class="pub-info">
+          <div class="pub-authors"><b>F Motallebi</b>, E Sim, M Haas, S Nazari</div>
+          <div class="pub-title">Mobile Electric Vehicle DCFC Infrastructure Deployment Opportunities</div>
+          <div class="pub-venue">Caltrans Final Report CA25-4409 (Task 4409)</div>
         </div>
         <span class="pub-year">2025</span>
       </a>
@@ -760,8 +774,9 @@ footer{padding:48px 0;text-align:center;border-top:1px solid var(--line)}
         <span class="pub-year">2022</span>
       </a>
 
-      <a class="pub-item" data-pubtype="journal" href="https://doi.org/10.3390/en14185713" target="_blank" rel="noopener">
+      <a class="pub-item has-thumb" data-pubtype="journal" href="https://doi.org/10.3390/en14185713" target="_blank" rel="noopener">
         <span class="pub-badge journal">Journal</span>
+        <img class="pub-thumb" src="images/ems-card.webp" alt="Test route with signalized intersections" loading="lazy">
         <div class="pub-info">
           <div class="pub-authors">A Rabinowitz, <b>F Motallebi Araghi</b>, T Gaikwad, ZD Asher, TH Bradley</div>
           <div class="pub-title">Development and Evaluation of Velocity Predictive Optimal Energy Management Strategies in Intelligent and Connected Hybrid Electric Vehicles</div>
@@ -949,8 +964,15 @@ document.querySelectorAll('[data-pubfilter]').forEach(btn=>{
 /* --- MODAL DATA --- */
 const modals={
   fieldtest:{
-    cat:'Electrification &mdash; Completed Caltrans Project',
+    cat:'Electrification &mdash; Caltrans Task 4409 (Lead Researcher)',
     title:'Mobile DCFC Field Testing &amp; Evaluation',
+    gallery:[
+      {src:'images/dcfc-evesco-ucdavis.webp',cap:'EVESCO EVES-6060-NA mobile charger charging a UC Davis fleet EV.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
+      {src:'images/dcfc-freewire-install.webp',cap:'FreeWire Boost Charger 200 during installation.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
+      {src:'images/dcfc-snow-charging.webp',cap:'Mobile charging of a Caltrans vehicle in winter conditions.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
+      {src:'images/dcfc-sweeper.webp',cap:'Mobile charger with a zero-emission street sweeper in the maintenance yard.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
+      {src:'images/dcfc-charge-profile.webp',cap:'Measured SOC, current, voltage, power, and cell temperature while charging a Chevrolet Bolt.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
+    ],
     tags:['EVESCO EVES-6060-NA','FreeWire Boost 200','Field Testing','EV Charging','Caltrans','Battery Management'],
     overview:'Evaluated mobile and semi-permanent DC fast-charging (DCFC) solutions for the California Department of Transportation\'s growing EV fleet. The project addressed infrastructure gaps delaying charging station deployments and hindering fleet operations by developing a comprehensive evaluation framework to compare two candidate systems under real-world conditions.',
     how:'Two chargers were procured, installed, and tested extensively across diverse operating conditions: the EVESCO EVES-6060-NA (fully mobile, battery-buffered) and the FreeWire Boost Charger 200 (semi-permanent, up to 200 kW). Testing covered vehicle compatibility across all seven Caltrans priority EVs, charging performance, infrastructure requirements, battery management, and degradation over time. Parameters measured included charging efficiency, power delivery, state-of-charge curves, and public DCFC protocol compatibility (CHAdeMO, CCS).',
@@ -962,11 +984,15 @@ const modals={
       'Actionable procurement, deployment, and long-term asset management recommendations delivered to Caltrans'
     ],
     conclusions:'EVESCO offers fully mobile operation with moderate power delivery — ideal for remote deployment without grid access. FreeWire provides higher throughput but requires more site preparation and permitting. Both fill a critical gap in Caltrans electrification strategy by decoupling fleet charging from permanent grid infrastructure.',
-    pubs:[{label:'Caltrans Final Report — Task 4409: Mobile &amp; Semi-Permanent DCFC Solutions',url:'https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/final-reports/final-report-task-4409.pdf'}]
+    pubs:[{label:'Caltrans Final Report CA25-4409 — Mobile Electric Vehicle DCFC Infrastructure Deployment Opportunities',url:'https://dot.ca.gov/-/media/dot-media/programs/research-innovation-system-information/documents/final-reports/final-report-task-4409.pdf'}]
   },
   task4482:{
     cat:'Electrification &mdash; Caltrans Task 4482 (Lead Researcher)',
     title:'Lifetime Cost-Benefit Analysis of Mobile DC Fast Chargers',
+    gallery:[
+      {src:'images/dcfc-evesco-f150.webp',cap:'Mobile DC fast charger charging a UC Davis Ford F-150 Lightning during field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'},
+      {src:'images/dcfc-fleet-snow.webp',cap:'Truck-mounted mobile charger serving fleet EVs.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
+    ],
     tags:['Cost-Benefit Analysis','Cost Modeling','Mobile DCFC','Python','MATLAB','Caltrans Task 4482'],
     overview:'Lead Researcher for the Caltrans project &ldquo;Lifetime Cost&ndash;Benefit Analysis of Mobile DC Fast Chargers,&rdquo; building an evidence-based assessment of the economic and operational feasibility of mobile DC fast chargers to support Caltrans&rsquo; fleet electrification planning.',
     how:'The work builds on UC Davis research on mobile DC fast chargers (MDCFCs) for Caltrans, including system design, cost modeling, and routing optimization in Python, MATLAB, and Google OR-Tools, and on field experience with mobile fast-charging hardware.',
@@ -978,6 +1004,10 @@ const modals={
   task4483:{
     cat:'Electrification &mdash; Caltrans Task 4483',
     title:'Optimal Planning for EV Charger Deployment',
+    gallery:[
+      {src:'images/mfc-routes-la.webp',cap:'Optimized mobile fast-charger service routes for the Los Angeles scenario.',credit:'Motallebi Araghi et al., arXiv:2512.02381 (CC BY 4.0)'},
+      {src:'images/mfc-routes-truckee.webp',cap:'Optimized service route for the Truckee scenario.',credit:'Motallebi Araghi et al., arXiv:2512.02381 (CC BY 4.0)'}
+    ],
     tags:['Routing Optimization','Vehicle Routing Problem','Mobile Fast Chargers','Python','Google OR-Tools','Caltrans Task 4483'],
     overview:'Optimization research supporting Caltrans fleet electrification: planning how mobile and fixed EV charging resources should be sized, routed, and deployed to serve state fleet vehicles.',
     how:'Charger deployment is posed as a routing and fleet-sizing problem. The related paper formulates a fleet size and mix capacitated vehicle routing problem with time windows (CVRPTW) for mobile fast chargers. Models are built in Python and MATLAB, with Google OR-Tools for routing optimization.',
@@ -989,6 +1019,9 @@ const modals={
   task4480:{
     cat:'Electrification &mdash; Caltrans Task 4480',
     title:'Task 4480 &mdash; Cost-Benefit: EV Chargers vs. Public Infrastructure',
+    gallery:[
+      {src:'images/dcfc-freewire-truck.webp',cap:'A dedicated on-site DC fast charger (FreeWire Boost Charger 200) charging a fleet truck during Caltrans field testing.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
+    ],
     tags:['Cost-Benefit','Fleet Electrification','Python','Caltrans Task 4480'],
     overview:'A cost-benefit framework comparing dedicated on-site EV charger installation with reliance on public charging infrastructure for Caltrans state fleet operations.',
     how:'',
@@ -1000,6 +1033,9 @@ const modals={
   fleet:{
     cat:'Electrification',
     title:'EV Fleet Electrification Analysis',
+    gallery:[
+      {src:'images/dcfc-fleet-snow.webp',cap:'State fleet EVs charging from a truck-mounted mobile charger.',credit:'Caltrans Task 4409 final report (Motallebi et al., 2025)'}
+    ],
     tags:['Python','Geotab SDK','FastSim','Pandas','Telematics','Caltrans-funded'],
     overview:'Conducted a large-scale, vehicle-level electrification feasibility study for California state-agency fleets using Geotab telematics data. The goal: determine precisely which vehicles at which depots can be replaced by battery EVs today, what charging infrastructure they require, and what total fleet-level energy demand results.',
     how:'Millions of GPS and telematics records are pulled via the Geotab SDK, cleaned, and reconstructed into individual trip profiles (distance, speed, elevation, payload). FastSim (NREL\'s vehicle simulation tool) is applied trip-by-trip to each candidate EV model, computing energy consumed and checking whether the battery meets range demand. Results are aggregated by vehicle, then by depot, to produce electrification readiness scores and charging demand forecasts for each site.',
@@ -1077,6 +1113,11 @@ const modals={
   koopman:{
     cat:'Autonomy &amp; Controls &mdash; IEEE Access, 2026',
     title:'Deep Bilinear Koopman Model for Real-Time Vehicle Control in Frenet Frame',
+    gallery:[
+      {src:'images/koopman-architecture.webp',cap:'MDBK-Net architecture: data acquisition, multi-step deep bilinear Koopman network, and bilinear MPC control block.',credit:'Abtahi, Motallebi Araghi et al., IEEE Access 2026 (CC BY 4.0)'},
+      {src:'images/koopman-dlc-results.webp',cap:'Controller comparison during a double lane change maneuver.',credit:'Abtahi, Motallebi Araghi et al., IEEE Access 2026 (CC BY 4.0)'},
+      {src:'images/koopman-hil-setup.webp',cap:'HIL setup: Simulink, ConfigurationDesk, and CarSim with the dSPACE SCALEXIO DS6001 real-time target.',credit:'Abtahi, Motallebi Araghi et al., IEEE Access 2026 (CC BY 4.0)'}
+    ],
     tags:['Koopman Operator','Deep Learning','MPC','Frenet Frame','HIL','dSPACE SCALEXIO','CarSim RT'],
     overview:'Accurate modeling and control of autonomous vehicles is hard because vehicle dynamics are nonlinear and coupled. Koopman operator theory makes powerful linear control techniques usable, but learning a finite-dimensional invariant subspace for high-fidelity modeling is an open problem. This work presents a deep Koopman approach to modeling and controlling vehicle dynamics in the curvilinear Frenet frame.',
     how:'A deep neural network learns the Koopman operator and its invariant subspace together from data. The model captures input&ndash;state bilinear interactions while preserving convexity, so it can be used in real-time model predictive control. A multi-step prediction loss is used in training for long-horizon accuracy, and a cumulative error regulator (CER) compensates for model mismatch by mitigating accumulated prediction error during trajectory tracking.',
@@ -1088,6 +1129,9 @@ const modals={
   hil:{
     cat:'Autonomy &amp; Controls &mdash; UC Davis',
     title:'dSPACE SCALEXIO HIL/SIL Test Environment',
+    gallery:[
+      {src:'images/koopman-hil-setup.webp',cap:'HIL workflow and bench: Simulink, ConfigurationDesk, and CarSim running on the dSPACE SCALEXIO DS6001.',credit:'Abtahi, Motallebi Araghi et al., IEEE Access 2026 (CC BY 4.0)'}
+    ],
     tags:['dSPACE SCALEXIO','HIL','SIL','CarSim RT','Connected Vehicles','Controls Validation'],
     overview:'Led the selection, acquisition, and commissioning of a dSPACE SCALEXIO testing environment at UC Davis, giving the lab a real-time platform for hardware-in-the-loop (HIL) and software-in-the-loop (SIL) validation of vehicle control and connected-vehicle algorithms.',
     how:'Controllers run against a real-time vehicle plant on the SCALEXIO system. The platform was used to validate the deep bilinear Koopman MPC controller, with a CarSim RT vehicle model as the target plant.',
@@ -1113,6 +1157,12 @@ const modals={
   ems:{
     cat:'Electrification &mdash; U.S. DOE Project, WMU',
     title:'Predictive Energy Management with Intelligent Traffic Systems',
+    gallery:[
+      {src:'images/ems-architecture.webp',cap:'Control architecture for connected and automated vehicle energy management.',credit:'Rabinowitz, Motallebi Araghi et al., Energies 2021 (CC BY 4.0)'},
+      {src:'images/ems-dp-mpc.webp',cap:'Full-cycle dynamic programming vs. model predictive control formulation.',credit:'Rabinowitz, Motallebi Araghi et al., Energies 2021 (CC BY 4.0)'},
+      {src:'images/ems-route-map.webp',cap:'Test route with signalized intersections.',credit:'Rabinowitz, Motallebi Araghi et al., Energies 2021 (CC BY 4.0)'},
+      {src:'images/ems-soc-fuel.webp',cap:'Velocity, battery SOC, and cumulative fuel traces for the compared strategies.',credit:'Rabinowitz, Motallebi Araghi et al., Energies 2021 (CC BY 4.0)'}
+    ],
     tags:['Energy Management','Velocity Prediction','Hybrid EVs','ITS','Traffic Management'],
     overview:'Simulation studies combining predictive optimal energy management strategies with Intelligent Transportation Systems (ITS), to understand how connected-vehicle information and traffic management together affect vehicle energy use.',
     how:'Velocity-predictive optimal energy management strategies were developed and evaluated for intelligent and connected hybrid electric vehicles. Prediction-based powertrain control was then combined with optimal traffic management and assessed on fuel efficiency, mobility, and productivity, using the mobility energy productivity metric.',
@@ -1143,6 +1193,7 @@ function openModal(id){
     <div class="modal-cat">${d.cat}</div>
     <div class="modal-title">${d.title}</div>
     <div class="modal-tags">${d.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('')}</div>
+    ${d.gallery&&d.gallery.length?`<div class="modal-gallery">${d.gallery.map((g,i)=>`<figure class="modal-fig${i===0?' lead':''}"><a href="${g.src}" target="_blank" rel="noopener"><img src="${g.src}" alt="${g.cap}" loading="lazy"></a><figcaption>${g.cap} <span>Source: ${g.credit}</span></figcaption></figure>`).join('')}</div>`:''}
     <div class="modal-hr"></div>
     <div class="modal-sec"><h4>Overview</h4><p>${d.overview}</p></div>
     ${d.how?`<div class="modal-sec"><h4>How It Works</h4><p>${d.how}</p></div>`:''}
